@@ -188,4 +188,12 @@ class PagesController extends AppController
         $this->set('description', 'Description de la page formulaire d\'inscription national');
         $this->set('keywords', 'Mots-clés, formulaire, inscription, national');
     }
+
+    public function inscriptionToEvent()
+    {
+        $this->viewBuilder()->setLayout('main');
+        $this->set('title', 'L\'Algérie');
+        $this->set('description', 'Description de la page L\'Algérie');
+        $this->set('keywords', 'Mots-clés, Algérie, salon');
+    }
 }
