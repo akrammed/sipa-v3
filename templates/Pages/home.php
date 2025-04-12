@@ -165,7 +165,7 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fa-solid fa-flag"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="1"
+              <span data-purecounter-start="0" data-purecounter-end="17" data-purecounter-duration="1"
                 class="purecounter"></span>
               <p>Pays</p>
             </div>
@@ -174,7 +174,7 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fa-solid fa-store"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="53" data-purecounter-duration="1"
+              <span data-purecounter-start="0" data-purecounter-end="170" data-purecounter-duration="1"
                 class="purecounter"></span>
               <p>Exposants</p>
             </div>
@@ -183,7 +183,7 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fa-solid fa-building"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1"
+              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
                 class="purecounter"></span>
               <p>Sociétés internationales</p>
             </div>
@@ -330,15 +330,46 @@
                 <!-- Additional Images (if needed) -->
                 <div class="gallery-item">
                     <a href="img/img9.jpg" class="glightbox" data-gallery="images-gallery">
-                        <img src="img/img8.jpg" alt="" class="img-fluid rounded">
+                        <img src="img/img9.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
+
+                <div class="gallery-item">
+                    <a href="img/img11.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img11.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="img/img12.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img12.jpg" alt="" class="img-fluid rounded">
                     </a>
                 </div>
 
                 <div class="gallery-item">
                     <a href="img/img10.jpg" class="glightbox" data-gallery="images-gallery">
-                        <img src="img/img8.jpg" alt="" class="img-fluid rounded">
+                        <img src="img/img10.jpg" alt="" class="img-fluid rounded">
                     </a>
                 </div>
+
+                <div class="gallery-item">
+                    <a href="img/img14.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img14.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
+
+                <div class="gallery-item">
+                    <a href="img/img15.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img15.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
+
+                <div class="gallery-item">
+                    <a href="img/img16.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img16.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
+
+
 
             </div><!-- End Gallery Slider -->
 
@@ -362,12 +393,12 @@
   
   <!-- Images Section -->
   <div style="flex: 1; min-width: 300px;">
-    <img src="img/oran1.jpg" alt="Image 1" style="width: 45%; height: auto;  margin-bottom: 100px;" />
-    <img src="img/oran1.jpg" alt="Image 2" style="width: 45%; height: auto;" />
+    <img src="img/oran1.jpg" alt="Image 1" style="width: 45%;border-radios:15px; height: auto;  margin-bottom: 100px;" />
+    <img src="img/oran3.jpg" alt="Image 2" style="width: 45%; height: auto;" />
   </div>
 
   <!-- Map Section -->
-  <div style="flex: 1; min-width: 300px; height: 270px; margin-bottom:30px;" data-aos="fade-up" data-aos-delay="200">
+  <div style="flex: 1;  min-width: 300px; height: 270px; margin-bottom:30px;" data-aos="fade-up" data-aos-delay="200">
     <iframe
       style="border:0; width: 100%; height: 100%;"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163508.3121578399!2d-0.7483913985274642!3d35.697069660511634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7314f2f2253bd1%3A0xa4088f0f0e08472a!2sOran!5e0!3m2!1sfr!2sdz!4v1712916079899!5m2!1sfr!2sdz"

@@ -111,11 +111,73 @@
            
           </div>
           
-          <div class="col-md-6 floating-label">
-            <label for="activity_sector">Secteur d'activité</label>
-            <input type="text" class="form-control" id="activity_sector" name="activity_sector" placeholder="Ex: Technologie, Santé, Finance..." required>
-            
-          </div>
+          <label for="activity_sector">Secteur d'activité</label>
+    <select class="form-control" id="activity_sector" name="activity_sector" required onchange="toggleOtherSector(this)">
+        <optgroup label="Pêche">
+            <option value="Pêche artisanale">Pêche artisanale</option>
+            <option value="Pêche côtière">Pêche côtière</option>
+            <option value="Pêche industrielle">Pêche industrielle</option>
+            <option value="Pêche au corail">Pêche au corail</option>
+            <option value="Pêche continentale">Pêche continentale</option>
+            <option value="Pêche récréative">Pêche récréative</option>
+            <option value="Pêche au thon rouge">Pêche au thon rouge</option>
+        </optgroup>
+
+        <optgroup label="Aquaculture">
+            <option value="Aquaculture marine">Aquaculture marine</option>
+            <option value="Aquaculture continentale">Aquaculture continentale</option>
+            <option value="Pisciculture intégrée">Pisciculture intégrée</option>
+        </optgroup>
+
+        <optgroup label="Autres secteurs">
+            <option value="Aliments pour poissons">Aliments pour poissons</option>
+            <option value="Génétique et reproduction">Génétique et reproduction</option>
+            <option value="Écloseries">Écloseries</option>
+            <option value="Fabrication de cages flottantes">Fabrication de cages flottantes</option>
+            <option value="Fabrication de filets de pêche">Fabrication de filets de pêche</option>
+            <option value="Équipements pour élevage de poissons">Équipements pour élevage de poissons</option>
+            <option value="Équipements pour la pêche professionnelle">Équipements pour la pêche professionnelle</option>
+            <option value="Appareils de pêche et navires">Appareils de pêche et navires</option>
+            <option value="Construction navale">Construction navale</option>
+            <option value="Équipements portuaires">Équipements portuaires</option>
+            <option value="Hygiène et santé des poissons">Hygiène et santé des poissons</option>
+            <option value="Transformation des produits halieutiques">Transformation des produits halieutiques</option>
+            <option value="Biotechnologies marines">Biotechnologies marines</option>
+            <option value="Énergies renouvelables">Énergies renouvelables</option>
+            <option value="Consultance">Consultance</option>
+            <option value="Commerce et distribution">Commerce et distribution</option>
+            <option value="Logistique">Logistique</option>
+            <option value="Écotourisme et pêche récréative">Écotourisme et pêche récréative</option>
+            <option value="Finance et investissements">Finance et investissements</option>
+            <option value="Bateaux de plaisance">Bateaux de plaisance</option>
+            <option value="Centres de recherche">Centres de recherche</option>
+            <option value="Plongée sous-marine">Plongée sous-marine</option>
+            <option value="Assurance">Assurance</option>
+            <option value="Banque">Banque</option>
+            <option value="Coopérative">Coopérative</option>
+            <option value="Association">Association</option>
+            <option value="Autre">Autre</option>
+        </optgroup>
+    </select>
+
+    <!-- Hidden text input for "Autre" -->
+    <input type="text" class="form-control mt-2" id="other_activity_sector" name="other_activity_sector" placeholder="Précisez votre secteur" style="display:none;">
+</div>
+
+
+<script>
+function toggleOtherSector(select) {
+    const otherInput = document.getElementById('other_activity_sector');
+    if (select.value === "Autre") {
+        otherInput.style.display = "block";
+        otherInput.required = true;
+    } else {
+        otherInput.style.display = "none";
+        otherInput.required = false;
+    }
+}
+</script>
+
       
           <div class="col-md-6 floating-label mb-3">
             <label for="registry_number">Registre de commerce Nº</label>

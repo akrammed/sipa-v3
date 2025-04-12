@@ -73,7 +73,11 @@ $cakeDescription = 'Sipa-algerie: 2025';
 
                 <!-- Logo -->
                 <a href="/" class="logo d-flex align-items-center me-auto">
+
+                
+                <img src="img/Flag_of_Algeria.gif" alt="">
                     <img src="img/mainlogo.png" alt="CAPA">
+
                 </a>
 
                 <!-- Navigation -->
@@ -128,70 +132,95 @@ $cakeDescription = 'Sipa-algerie: 2025';
     </main>
 
     <footer id="footer" class="footer light-background">
-
-        <div class="container footer-top">
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6 footer-about">
-                    <a href="index.html" class="logo d-flex align-items-center">
-                        <span class="sitename">Capa algerie</span>
-                    </a>
-                    <div class="footer-contact pt-3">
-                        <p><strong>Mobile:</strong> +213-555-57-80-16</p>
-                        <!-- <p><strong>Mobile (English):</strong> +213-661-13-11-17</p> -->
-                        <p><strong>Whatsapp:</strong>  +213-560-364-008</p>
-                        <p><strong>Fixe/Fax:</strong> +213-20-30-56-54</p>
-                        <p><strong>Adresse:</strong> Cité 400 Logements Bât. 3A, N° 3/4 El Hammamet, Chéraga, ALGER</p>
-                        <p><strong>Site du ministère:</strong> <a href="http://www.mpeche.gov.dz"
-                                target="_blank">www.mpeche.gov.dz</a></p>
-                    </div>
-                    <div class="social-links d-flex mt-4">
-                        <a href="https://web.facebook.com/capa.Algeria?mibextid=ZbWKwL&_rdc=3&_rdr#" target="_blank"><i
-                                class="bi bi-facebook"></i></a>
-                        <a href="https://www.youtube.com/@capaalgerie" target="_blank"><i class="bi bi-youtube"></i></a>
-                        <a href="ttps://www.linkedin.com/company/capaalgerie/" target="_blank"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://twitter.com/capaalgerie#" target="_blank"><i class="bi bi-twitter"></i></a>
-                    </div>
+    <div class="container footer-top">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6 footer-about">
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <span class="sitename">Capa algerie</span>
+                </a>
+                <div class="footer-contact pt-3">
+                    <p><strong>Mobile:</strong> +213-555-57-80-16</p>
+                    <!-- <p><strong>Mobile (English):</strong> +213-661-13-11-17</p> -->
+                    <p><strong>Whatsapp:</strong>  +213-560-364-008</p>
+                    <p><strong>Fixe/Fax:</strong> +213-20-30-56-54</p>
+                    <p><strong>Adresse:</strong> Cité 400 Logements Bât. 3A, N° 3/4 El Hammamet, Chéraga, ALGER</p>
+                    <p><strong>Site du ministère:</strong> <a href="http://www.mpeche.gov.dz"
+                            target="_blank">www.mpeche.gov.dz</a></p>
                 </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Visiter le site</h4>
-                    <ul>
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#">Qui sommes-nous</a></li>
-                        <li><a href="#">Espace Exposant</a></li>
-                        <li><a href="#">Plan du Salon</a></li>
-                        <li><a href="#">Édition Précédente</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+                <div class="social-links d-flex mt-4">
+                    <a href="https://web.facebook.com/capa.Algeria?mibextid=ZbWKwL&_rdc=3&_rdr#" target="_blank"><i
+                            class="bi bi-facebook"></i></a>
+                    <a href="https://www.youtube.com/@capaalgerie" target="_blank"><i class="bi bi-youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/capaalgerie/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://twitter.com/capaalgerie#" target="_blank"><i class="bi bi-twitter"></i></a>
                 </div>
+            </div>
 
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Programmes et Événements</h4>
-                    <ul>
-                        <li><a href="#">Programmes</a></li>
-                        <li><a href="#">Événements</a></li>
-                        <li><a href="#">Invitation VISA</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h5>Le jour J est arrivé !</h5>
-                    <p>Ne vous contentez pas de visiter notre site, il est temps de venir nous visiter au salon !</p>
-                </div>
+            <div class="col-lg-2 col-md-3 footer-links">
+                <h4>Visiter le site</h4>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Qui sommes-nous</a></li>
+                    <li><a href="#">Espace Exposant</a></li>
+                    <li><a href="#">Plan du Salon</a></li>
+                    <li><a href="#">Édition Précédente</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
 
+            <div class="col-lg-2 col-md-3 footer-links">
+                <h4>Programmes et Événements</h4>
+                <ul>
+                    <li><a href="#">Programmes</a></li>
+                    <li><a href="#">Événements</a></li>
+                    <li><a href="#">Invitation VISA</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-links">
+                <h5>Le jour J approche !</h5>
+                <p>Ne vous contentez pas de visiter notre site, venez nous rencontrer au salon !</p>
+                <div id="countdown" style="font-size: 18px; font-weight: bold; margin-top: 10px;">
+                    <span id="days">00</span> jours 
+                    <span id="hours">00</span> h 
+                    <span id="minutes">00</span> min
+                </div>
             </div>
         </div>
+    </div>
 
-
-
-        <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">Capa algerie</strong> <span>All Rights Reserved</span>
-            </p>
-            <div class="credits">
-                Designed by <a href="https://catalyst-dz.com/">Catalyst-dz</a>
-            </div>
+    <div class="container copyright text-center mt-4">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Capa algerie</strong> <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+            Designed by <a href="https://catalyst-dz.com/">Catalyst-dz</a>
         </div>
+    </div>
+</footer>
 
-    </footer>
+<!-- Countdown Script -->
+<script>
+    const countdown = () => {
+        const countDate = new Date("November 6, 2025 00:00:00").getTime();
+        const now = new Date().getTime();
+        const gap = countDate - now;
+
+        const second = 1000;
+        const minute = second * 60;
+        const hour = minute * 60;
+        const day = hour * 24;
+
+        const days = Math.floor(gap / day);
+        const hours = Math.floor((gap % day) / hour);
+        const minutes = Math.floor((gap % hour) / minute);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+    };
+
+    setInterval(countdown, 1000);
+</script>
 
 
     <!-- Scroll Top -->
