@@ -94,7 +94,7 @@
  <section class="hero-sectione" data-aos="fade-up">
     <div class="container text-center">
         <h1 class="display-5 text-white fw-bold mb-3">Formulaire de Participation</h1>
-        <p class="lead">SIPA 2025 - Salon national de la Pêche et de l'Aquaculture</p>
+        <p class="lead">SIPA 2025 - Salon international de la Pêche et de l'Aquaculture</p>
     </div>
 </section>
 

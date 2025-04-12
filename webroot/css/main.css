@@ -953,8 +953,8 @@ section,
 }
 
 .hero .content .why-box {
-  color: var(--contrast-color);
-  background: var(--accent-color);
+  color: black;
+  background: color-mix(in srgb, var(--surface-color), transparent 20%);
   padding: 30px;
   border-radius: 4px;
 }
@@ -971,8 +971,8 @@ section,
 }
 
 .hero .content .why-box .more-btn {
-  color: var(--contrast-color);
-  background: color-mix(in srgb, var(--contrast-color), transparent 80%);
+  color: black;
+  background: color-mix(in srgb, var(--accent-color), transparent 80%);
   display: inline-block;
   padding: 6px 30px 8px 30px;
   border-radius: 50px;

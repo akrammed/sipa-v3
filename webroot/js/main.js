@@ -183,3 +183,35 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+
+$(document).ready(function () {
+  $('.gallery-slider').slick({
+    slidesToShow: 4, // ✅ Affiche 4 images par défaut
+    slidesToScroll: 1,
+    dots: true,       // ✅ Pagination
+    arrows: true,     // ✅ Flèches navigation
+    infinite: true,   // ✅ Loop infini
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3 // Pour écrans ≤1200px
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2 // Pour écrans ≤992px
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1 // Pour petits écrans
+        }
+      }
+    ]
+  });
+});

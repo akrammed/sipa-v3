@@ -45,6 +45,9 @@ $cakeDescription = 'Sipa-algerie: 2025';
     <link href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"> 
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -102,7 +105,7 @@ $cakeDescription = 'Sipa-algerie: 2025';
                 </nav>
 
                 <!-- CTA Buttons -->
-                <a class="cta-btn d-none d-sm-block" href="/formulaireinscriptionnational">réservez votre stand</a>
+                
 
             </div>
         </div>
@@ -134,8 +137,8 @@ $cakeDescription = 'Sipa-algerie: 2025';
                     </a>
                     <div class="footer-contact pt-3">
                         <p><strong>Mobile:</strong> +213-555-57-80-16</p>
-                        <p><strong>Mobile (English):</strong> +213-661-13-11-17</p>
-                        <p><strong>Whatsapp:</strong> +213-555-38-15-74</p>
+                        <!-- <p><strong>Mobile (English):</strong> +213-661-13-11-17</p> -->
+                        <p><strong>Whatsapp:</strong>  +213-560-364-008</p>
                         <p><strong>Fixe/Fax:</strong> +213-20-30-56-54</p>
                         <p><strong>Adresse:</strong> Cité 400 Logements Bât. 3A, N° 3/4 El Hammamet, Chéraga, ALGER</p>
                         <p><strong>Site du ministère:</strong> <a href="http://www.mpeche.gov.dz"
@@ -204,6 +207,9 @@ $cakeDescription = 'Sipa-algerie: 2025';
     <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>   
+
 
     <?= $this->Html->script(['main']) ?>
 </body>

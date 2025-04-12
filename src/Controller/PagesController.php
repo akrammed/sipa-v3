@@ -189,11 +189,19 @@ class PagesController extends AppController
         $this->set('keywords', 'Mots-clés, formulaire, inscription, national');
     }
 
-    public function inscriptionToEvent()
+    public function reservationstand()
     {
         $this->viewBuilder()->setLayout('main');
-        $this->set('title', 'L\'Algérie');
+        $this->set('title', 'page cards de l\'inscriptionToEvent');
         $this->set('description', 'Description de la page L\'Algérie');
-        $this->set('keywords', 'Mots-clés, Algérie, salon');
+        $this->set('keywords', 'Mots-clés, event, sipa');
+    }
+
+    public function formulairevisa()
+    {
+        $this->viewBuilder()->setLayout('main');
+        $this->set('title', 'formulairevisa');
+        $this->set('description', 'formulairevisa');
+        $this->set('keywords', 'formulairevisa');
     }
 }

@@ -6,9 +6,6 @@
         --light-color: #f8f9fa;
         --dark-color: #212529;
     }
-
-
-
     .hero-sectione {
         background: linear-gradient(135deg, #0d6efd, #0a58ca);
         padding: 80px 0;
@@ -16,26 +13,22 @@
         color: white;
         border-radius: 0 0 10px 10px;
     }
-
     .form-container {
         background: white;
         padding: 40px;
         border-radius: 10px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
-
     h4 {
         color: var(--primary-color);
         border-bottom: 2px solid var(--primary-color);
         padding-bottom: 10px;
         font-weight: 600;
     }
-
     .floating-label {
         position: relative;
         margin-bottom: 20px;
     }
-
     .floating-label label {
         position: absolute;
         top: 0;
@@ -47,20 +40,17 @@
         color: var(--secondary-color);
         transition: all 0.3s ease;
     }
-
     .floating-label .form-control,
     .floating-label .form-select {
         height: 50px;
         border-radius: 5px;
         border: 1px solid #ced4da;
     }
-
     .floating-label .form-control:focus,
     .floating-label .form-select:focus {
         border-color: var(--primary-color);
         box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
     }
-
     .price-tag {
         background-color: #e9ecef;
         padding: 2px 8px;
@@ -69,31 +59,25 @@
         margin-left: 10px;
         color: var(--secondary-color);
     }
-
     .btn-outline-primary {
         border-width: 2px;
         font-weight: 500;
         transition: all 0.3s ease;
     }
-
     .btn-outline-primary:hover {
         transform: translateY(-3px);
         box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
     }
-
     .form-check {
         margin-bottom: 10px;
         padding-left: 2rem;
     }
-
-
-
-    /* Footer styles */
 </style>
+
 <section class="hero-sectione" data-aos="fade-up">
     <div class="container text-center">
         <h1 class="display-5 text-white fw-bold mb-3">Formulaire de Participation</h1>
-        <p class="lead">SIPA 2025 - Salon national de la Pêche et de l'Aquaculture</p>
+        <p class="lead">SIPA 2025 - Salon international de la Pêche et de l'Aquaculture</p>
     </div>
 </section>
 
@@ -108,62 +92,50 @@
                     <input type="text" class="form-control" id="company_name" name="company_name" required>
                     <label for="company_name">Raison Sociale</label>
                 </div>
-
                 <div class="col-md-6 floating-label">
                     <input type="text" class="form-control" id="activity_sector" name="activity_sector" required>
                     <label for="activity_sector">Secteur d'activité</label>
                 </div>
-
                 <div class="col-md-6 floating-label">
                     <input type="text" class="form-control" id="registry_number" name="registry_number" required>
                     <label for="registry_number">Registre de commerce Nº</label>
                 </div>
-
                 <div class="col-md-6 floating-label">
                     <input type="text" class="form-control" id="tax_id" name="tax_id" required>
                     <label for="tax_id">Nº Identifiant fiscal</label>
                 </div>
-
                 <div class="col-md-12 floating-label">
                     <input type="text" class="form-control" id="address" name="address" required>
                     <label for="address">Adresse</label>
                 </div>
-
                 <div class="col-md-4 floating-label">
                     <input type="text" class="form-control" id="city" name="city" required>
                     <label for="city">Ville</label>
                 </div>
-
                 <div class="col-md-4 floating-label">
                     <input type="text" class="form-control" id="country" name="country" required>
                     <label for="country">Pays</label>
                 </div>
-
                 <div class="col-md-4 floating-label">
                     <input type="text" class="form-control" id="contact_person" name="contact_person" required>
                     <label for="contact_person">Personne à contacter</label>
                 </div>
-
                 <div class="col-md-4 floating-label">
-                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                    <input type="tel" class="form-control" id="phone" name="phone">
                     <label for="phone">Tél.</label>
                 </div>
-
                 <div class="col-md-4 floating-label">
                     <input type="text" class="form-control" id="fax" name="fax">
                     <label for="fax">Fax</label>
                 </div>
-
                 <div class="col-md-4 floating-label">
                     <input type="tel" class="form-control" id="mobile" name="mobile" required>
                     <label for="mobile">Mobile</label>
                 </div>
-
                 <div class="col-md-6 floating-label">
                     <input type="email" class="form-control" id="email" name="email" required>
                     <label for="email">Email</label>
                 </div>
-
                 <div class="col-md-6 floating-label">
                     <input type="url" class="form-control" id="website" name="website">
                     <label for="website">Site Web</label>
@@ -183,26 +155,51 @@
                     <label for="stand_type">Type de Stand</label>
                 </div>
 
+                <!-- Electricité par jour -->
+                <div class="floating-label mb-4">
+                    <select class="form-select" id="electricity" name="electricity" required>
+                        <option value="">Électricité (par jour)</option>
+                        <option value="12">12 m² - 720 DA</option>
+                        <option value="15">15 m² - 900 DA</option>
+                        <option value="18">18 m² - 1080 DA</option>
+                        <option value="21">21 m² - 1260 DA</option>
+                        <option value="24">24 m² - 1440 DA</option>
+                        <option value="27">27 m² - 1620 DA</option>
+                        <option value="36">36 m² - 2160 DA</option>
+                        <option value="48">48 m² - 2890 DA</option>
+                        <option value="54">54 m² - 3240 DA</option>
+                        <option value="60">60 m² - 3600 DA</option>
+                    </select>
+                    <label for="electricity">Électricité (par jour)</label>
+                </div>
+
                 <div class="row g-4 mb-3">
                     <div class="col-md-6 floating-label">
                         <input type="number" class="form-control" id="area" name="area" min="12" required>
                         <label for="area">Superficie demandée (m²)</label>
                     </div>
-
                     <div class="col-md-6 floating-label">
                         <select class="form-select" id="facades" name="facades" required>
-                            <option value=""></option>
                             <option value="0">Sans supplément</option>
-                            <option value="2">2 façades - 15.000 DA</option>
-                            <option value="3">3 façades - 20.000 DA</option>
-                            <option value="4">4 façades - 30.000 DA</option>
+                            <option value="1">1 façade sans supplément</option>
+                            <option value="2">2 façades - Nouveau Prix</option>
+                            <option value="3">3 façades - Nouveau Prix</option>
+                            <option value="4">4 façades - Nouveau Prix</option>
                         </select>
                         <label for="facades">Façades supplémentaires</label>
                     </div>
                 </div>
+
+                <!-- Checkbox Électricité Obligatoire -->
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="electricity_required" name="electricity_required" value="1" required>
+                    <label class="form-check-label" for="electricity_required">
+                        Électricité obligatoire (20,000 DA)
+                        <span class="price-tag">20,000 DA</span>
+                    </label>
+                </div>
             </div>
 
-            <!-- Publicité sur le Catalogue -->
             <h4 data-aos="fade-right" class="mt-5 mb-4">Publicité sur le Catalogue</h4>
             <div data-aos="fade-up" class="mb-3">
                 <div class="form-check">
@@ -289,27 +286,29 @@
                     <label for="stand_name">Nom sur l'enseigne (max 20 caractères)</label>
                 </div>
             </div>
-
+            
+            <!-- Confirmation Badges et Macarons -->
             <h4 data-aos="fade-right" class="mt-5 mb-4">Confirmation</h4>
             <div class="row g-4" data-aos="fade-up">
                 <div class="col-md-6 floating-label">
                     <input type="text" class="form-control" id="company_name_confirmation" name="company_name_confirmation" required>
                     <label for="company_name_confirmation">Nom de la société</label>
                 </div>
-
                 <div class="col-md-6 floating-label">
                     <input type="number" class="form-control" id="badges_count" name="badges_count" min="1" required>
                     <label for="badges_count">Nombre de badges exposants</label>
                 </div>
-
                 <div class="col-md-6 floating-label">
-                    <input type="text" class="form-control" id="location" name="location" required>
-                    <label for="location">Lieu</label>
+                    <select class="form-select" id="macarons" name="macarons" required>
+                        <option value="1">1 badge = 1 macaron</option>
+                        <option value="2">4 badges = 2 macarons</option>
+                        <option value="3">6 badges = 3 macarons</option>
+                    </select>
+                    <label for="macarons">Macarons</label>
                 </div>
-
-                <div class="col-md-6 floating-label">
-                    <input type="date" class="form-control" id="date" name="date" required>
-                    <label for="date">Date</label>
+                <div class="col-md-12 floating-label">
+                    <textarea class="form-control" id="specific_request" name="specific_request" rows="3" placeholder="Demande spécifique"></textarea>
+                    <label for="specific_request">Demande spécifique</label>
                 </div>
             </div>
 

@@ -42,6 +42,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <a target="_blank" rel="noopener" href="https://book.cakephp.org/5/">Documentation</a>
             <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
         </div>
+
+        <?= $this->Html->css([
+  'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+  'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css'
+]) ?>
+
+<?= $this->Html->script([
+  'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+  'https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js'
+]) ?>
+
     </nav>
     <main class="main">
         <div class="container">

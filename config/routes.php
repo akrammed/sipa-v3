@@ -66,6 +66,8 @@ return function (RouteBuilder $routes): void {
          $builder->connect('/exposantnational', ['controller' => 'Pages', 'action' => 'exposantnational']);
          $builder->connect('/exposantinternational', ['controller' => 'Pages', 'action' => 'exposantinternational']);
          $builder->connect('/epaiment', ['controller' => 'Pages', 'action' => 'epaiment']);
+
+
  
          // Plan du salon
          $builder->connect('/plandusalon', ['controller' => 'Pages', 'action' => 'plandusalon']);
@@ -79,6 +81,16 @@ return function (RouteBuilder $routes): void {
 
          $builder->connect('/formulaireinscriptionnational', ['controller' => 'Pages', 'action' => 'formulaireinscriptionnational']);
          $builder->connect('/formulaireinscription', ['controller' => 'Pages', 'action' => 'formulaireinscription']);
+
+         //path to l'incription to the event 
+
+         $builder->connect('/reservationstand', ['controller' => 'Pages', 'action' => 'reservationstand']);
+
+
+         $builder->connect('/formulairevisa', ['controller' => 'Pages', 'action' => 'formulairevisa']);
+
+
+
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.

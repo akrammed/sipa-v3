@@ -1,4 +1,56 @@
+ <style>
+ 
+ 
+ .icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 icons per row */
+  gap: 80px;
+  background-color: #0056b3; /* Blue background */
+  padding: 40px;
+  border-radius: 12px;
+  width: 500px;
+  height: 500px;
+}
 
+.icon-grid i {
+  font-size: 40px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 80px;
+  background-color: #007bff;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.icon-grid i:hover {
+  transform: scale(1.1);
+}
+
+/* Custom Styles for Gallery Slider */
+.gallery-slider {
+    padding: 20px;
+}
+
+.gallery-item {
+    margin-right: 15px; /* Adjust spacing between images */
+}
+
+.gallery-item img {
+    width: 1000px;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+ </style>
     <!-- Hero Section -->
     <section id="hero" class="hero section light-background">
 
@@ -13,10 +65,10 @@
         <div class="content row gy-4">
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
-              <h2 class="text-white">SIPA 2025</h2>
-              <p class="text-white">Salon International de la Pêche et de l'Aquaculture</p>
+              <h2 class="text-black">SIPA 2025</h2>
+              <p class="text-black">Salon International de la Pêche et de l'Aquaculture</p>
               <p>
-                La 9ᵉ édition du Salon International de la Pêche et de l’Aquaculture se tiendra à Oran du 6 au 9
+                La 10ᵉ édition du Salon International de la Pêche et de l’Aquaculture se tiendra à Oran du 6 au 9
                 novembre 2025.
                 Cet événement incontournable réunit les professionnels, institutionnels, chercheurs et investisseurs du
                 secteur.
@@ -60,7 +112,7 @@
                     <i class="bi bi-pass"></i>
                     <h4>Visa</h4>
                     <p>Besoin d’un visa pour participer ? Remplissez votre demande dès maintenant en ligne.</p>
-                    <div class="text-center mt-3">
+                    <div style="margin-top:40px;" class="text-center mt-8 ">
                       <a href="/formulaireinscriptionnational" class="btn btn-primary btn-md">Inscription visa</a>
                     </div>
                   </div>
@@ -76,101 +128,32 @@
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
+
     <section id="about" class="about section">
-
-      <div class="container">
-
-        <div class="row gy-4 gx-5">
-
-          <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
-            <img src="img/safe_in.jpg" class="img-fluid" alt="Filières SIPA 2025">
-          </div>
-
-          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-            <h3>Les Filières Présentes</h3>
-            <p>
-              SIPA 2025 rassemble l’ensemble des acteurs majeurs de la pêche et de l’aquaculture à travers des filières
-              variées couvrant tous les maillons de la chaîne de valeur.
-            </p>
-            <ul>
-              <li>
-                <i class="fa-solid fa-fish-fins"></i>
-                <div>
-                  <h5>Équipements pour élevage de poissons</h5>
-                  <p>Installations pour aquaculture marine et continentale, cages, accessoires spécialisés…</p>
-                </div>
-              </li>
-              <li>
-                <i class="fa-solid fa-network-wired"></i>
-                <div>
-                  <h5>Accessoires pour la pêche professionnelle</h5>
-                  <p>Attirail, filets, équipements dédiés à la pêche artisanale et industrielle.</p>
-                </div>
-              </li>
-              <li>
-                <i class="fa-solid fa-ship"></i>
-                <div>
-                  <h5>Navires et construction navale</h5>
-                  <p>Conception de bateaux, équipements portuaires, systèmes de navigation et sécurité.</p>
-                </div>
-              </li>
-              <li>
-                <i class="fa-solid fa-seedling"></i>
-                <div>
-                  <h5>Nutrition & Alimentation</h5>
-                  <p>Algues, farines animales et végétales, compléments alimentaires aquacoles.</p>
-                </div>
-              </li>
-              <li>
-                <i class="fa-solid fa-dna"></i>
-                <div>
-                  <h5>Génétique & Reproduction</h5>
-                  <p>Production d’alevins, technologies de reproduction, amélioration des souches.</p>
-                </div>
-              </li>
-              <li>
-                <i class="fa-solid fa-syringe"></i>
-                <div>
-                  <h5>Hygiène & Santé des poissons</h5>
-                  <p>Produits vétérinaires, systèmes de surveillance sanitaire, bonnes pratiques.</p>
-                </div>
-              </li>
-              <li>
-                <i class="fa-solid fa-water"></i>
-                <div>
-                  <h5>Productions halieutiques</h5>
-                  <p>Production d’algues, coraux, perles de culture et poissons de mer.</p>
-                </div>
-              </li>
-              <li>
-                <i class="fa-solid fa-industry"></i>
-                <div>
-                  <h5>Transformation des produits de la mer</h5>
-                  <p>Machines de découpe, équipements d’emballage, systèmes de conservation.</p>
-                </div>
-              </li>
-              <li>
-                <i class="fa-solid fa-anchor"></i>
-                <div>
-                  <h5>Bateaux & équipements de plaisance</h5>
-                  <p>Solutions pour loisirs nautiques et navigation de plaisance.</p>
-                </div>
-              </li>
-              <li>
-                <i class="fa-solid fa-ellipsis"></i>
-                <div>
-                  <h5>Autres secteurs liés</h5>
-                  <p>Innovations, technologies transversales et services complémentaires.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
+  <div class="container">
+    <div class="row gy-4 gx-5">
+      <!-- Image -->
+      <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+        <img src="img/safe_in.jpg" class="img-fluid" alt="Filières SIPA 2025">
       </div>
 
-    </section><!-- /About Section -->
+      <!-- Icon Grid Only -->
+      <div class="col-lg-6 content  d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon-grid">
+          <i class="fa-solid fa-fish-fins"></i>
+          <i class="fa-solid fa-network-wired"></i>
+          <i class="fa-solid fa-ship"></i>
+          <i class="fa-solid fa-seedling"></i>
+          <i class="fa-solid fa-dna"></i>
+          <i class="fa-solid fa-syringe"></i>
+          <i class="fa-solid fa-water"></i>
+          <i class="fa-solid fa-industry"></i>
+          <i class="fa-solid fa-anchor"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Stats Section -->
     <section id="stats" class="stats section light-background">
@@ -240,7 +223,7 @@
                 <i class="fas fa-comments"></i>
               </div>
               <a href="#" class="stretched-link">
-                <h3>Espace d'échange</h3>
+                <h3>Espace d'échange b2b</h3>
               </a>
               <p>Un salon favorisant la concertation et les échanges dans le domaine de l’aquaculture.</p>
             </div>
@@ -278,90 +261,93 @@
 
 
 
+    
     <!-- Gallery Section -->
+
     <section id="gallery" class="gallery section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
         <h2>Galerie</h2>
         <p>Découvrez nos images et moments forts</p>
-      </div><!-- End Section Title -->
+    </div><!-- End Section Title -->
 
-      <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+    <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row g-0">
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="img/imag1.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="img/imag1.jpg" alt="" class="img-fluid rounded">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+            <!-- Slider Container -->
+            <div class="gallery-slider">
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="img/img2.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="img/img2.jpg" alt="" class="img-fluid rounded">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+                <div class="gallery-item">
+                    <a href="img/img1.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img1.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="img/img3.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="img/img3.jpg" alt="" class="img-fluid rounded">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+                <div class="gallery-item">
+                    <a href="img/img2.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img2.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
 
+                <div class="gallery-item">
+                    <a href="img/img3.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img3.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="img/img7.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="img/img7.jpg" alt="" class="img-fluid rounded">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+                <div class="gallery-item">
+                    <a href="img/img4.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img4.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
 
+                <div class="gallery-item">
+                    <a href="img/img5.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img5.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="img/img4.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="img/img4.jpg" alt="" class="img-fluid rounded">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+                <div class="gallery-item">
+                    <a href="img/img6.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img6.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="img/img5.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="img/img5.jpg" alt="" class="img-fluid rounded">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+                <div class="gallery-item">
+                    <a href="img/img7.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img7.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="img/img8.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="img/img8.jpg" alt="" class="img-fluid rounded">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+                <div class="gallery-item">
+                    <a href="img/img8.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img8.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="img/img6.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="img/img6.jpg" alt="" class="img-fluid rounded">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+                <!-- Additional Images (if needed) -->
+                <div class="gallery-item">
+                    <a href="img/img9.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img8.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
+
+                <div class="gallery-item">
+                    <a href="img/img10.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/img8.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
+
+            </div><!-- End Gallery Slider -->
 
         </div>
 
-      </div>
+    </div>
 
-    </section><!-- /Gallery Section -->
+</section><!-- /Gallery Section -->
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -372,11 +358,30 @@
         <p>Nous sommes là pour répondre à toutes vos questions et demandes concernant l'événement.</p>
       </div><!-- End Section Title -->
 
-      <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
-        <iframe style="border:0; width: 100%; height: 270px;"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d205038.66629413326!2d2.753100919815726!3d36.58474401628145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128faf85b461727f%3A0xe817a51ddf989bec!2sCit%C3%A9%2060%20log%20bat%201%20amara%20cheraga!5e0!3m2!1sfr!2sdz!4v1744157371085!5m2!1sfr!2sdz"
-          frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div><!-- End Google Maps -->
+      <div style="display: flex; flex-wrap: wrap; margin-left:50px; margin-right:50px; align-items: stretch;">
+  
+  <!-- Images Section -->
+  <div style="flex: 1; min-width: 300px;">
+    <img src="img/oran1.jpg" alt="Image 1" style="width: 45%; height: auto;  margin-bottom: 100px;" />
+    <img src="img/oran1.jpg" alt="Image 2" style="width: 45%; height: auto;" />
+  </div>
+
+  <!-- Map Section -->
+  <div style="flex: 1; min-width: 300px; height: 270px; margin-bottom:30px;" data-aos="fade-up" data-aos-delay="200">
+    <iframe
+      style="border:0; width: 100%; height: 100%;"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163508.3121578399!2d-0.7483913985274642!3d35.697069660511634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7314f2f2253bd1%3A0xa4088f0f0e08472a!2sOran!5e0!3m2!1sfr!2sdz!4v1712916079899!5m2!1sfr!2sdz"
+      frameborder="0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+
+</div>
+
+
+      <!-- End Google Maps -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
@@ -449,4 +454,3 @@
 
     </section><!-- /Contact Section -->
 
-  
