@@ -89,6 +89,7 @@ return function (RouteBuilder $routes): void {
 
          $builder->connect('/formulairevisa', ['controller' => 'Pages', 'action' => 'formulairevisa']);
 
+         $builder->connect('/email/send', ['controller' => 'Emails', 'action' => 'national']);
 
 
 

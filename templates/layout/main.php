@@ -73,7 +73,7 @@ $cakeDescription = 'Sipa-algerie: 2025';
 
                 <!-- Logo -->
                 <a href="/" class="logo d-flex align-items-center me-auto">
-                    <img src="img/mainlogo.png" alt="CAPA">
+                    <img src="img/IMG-20250328-WA0000.jpg" alt="CAPA">
                 </a>
 
                 <!-- Navigation -->
@@ -94,7 +94,6 @@ $cakeDescription = 'Sipa-algerie: 2025';
                             <ul>
                                 <li><a class="header-item" href="/formulaireinscriptionnational">Exposant national</a></li>
                                 <li><a class="header-item" href="/formulaireinscription">Exposant international</a></li>
-                                <li><a class="header-item" href="https://app.efawtara.com/capaalgerie">E-paiment</a></li>
                             </ul>
                         </li>
                         <li><a class="header-item" href="#">PLAN DU SALON</a></li>
