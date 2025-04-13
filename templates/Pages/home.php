@@ -91,7 +91,7 @@
                     <h4>Exposants</h4>
                     <p>Réservez votre stand pour présenter vos produits et services aux professionnels du secteur.</p>
                     <div class="text-center mt-3">
-                      <a href="/formulaireinscriptionnational" class="btn btn-primary btn-md">Réserver votre stand</a>
+                      <a href="/reservationstand" class="btn btn-primary btn-md">Réserver votre stand</a>
                     </div>
                   </div>
                 </div><!-- End Icon Box -->
@@ -113,7 +113,7 @@
                     <h4>Visa</h4>
                     <p>Besoin d’un visa pour participer ? Remplissez votre demande dès maintenant en ligne.</p>
                     <div style="margin-top:40px;" class="text-center mt-8 ">
-                      <a href="/formulaireinscriptionnational" class="btn btn-primary btn-md">Inscription visa</a>
+                      <a href="/formulairevisa" class="btn btn-primary btn-md">Inscription visa</a>
                     </div>
                   </div>
                 </div><!-- End Icon Box -->

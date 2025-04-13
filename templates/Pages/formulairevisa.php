@@ -73,7 +73,20 @@
 <!-- Main Form -->
 <main class="container mb-3">
     <div class="form-container" data-aos="fade-up">
-        <form method="POST">
+
+    <?= $this->Form->create(null, [
+            'url' => ['controller' => 'Emails', 'action' => 'visa'],
+            'method' => 'POST',
+            'enctype' => 'multipart/form-data',
+            'id' => 'reservation-form'
+        ]); ?>
+        <?= $this->Form->control('_csrfToken', [
+            'type' => 'hidden',
+            'value' => $this->request->getAttribute('csrfToken')
+        ]); ?>
+    
+    
+    <form method="POST">
             <!-- SECTION 1: Visitor Professional Information -->
             <h4 data-aos="fade-right" class="mb-5">Informations Professionnelles du Visiteur</h4>
             <div class="row g-4" data-aos="fade-up">
