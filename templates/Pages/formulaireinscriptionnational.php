@@ -95,7 +95,7 @@
 <!-- Main Form -->
 <main class="container mb-5">
     <div class="form-container" data-aos="fade-up">
-    <form method="POST" action="/emails/participation">
+    <form method="POST" action="/emails/services">
     <input type="hidden" name="_csrfToken" value="<?php echo $this->request->getAttribute('csrfToken'); ?>">
             <!-- Informations sur l'entreprise -->
             <h4 data-aos="fade-right" class="mb-4">Informations sur l'entreprise</h4>

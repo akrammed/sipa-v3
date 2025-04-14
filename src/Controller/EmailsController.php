@@ -17,15 +17,7 @@ class EmailsController extends AppController
     public function participation()
     {
         if ($this->request->is('post')) {
-            try {
-                $this->getRequest()->getAttribute('csrfToken'); // Triggers validation
-            } catch (InvalidCsrfTokenException $e) {
-                $this->Flash->error('Invalid CSRF token');
-                return $this->redirect($this->referer());
-            }
-
-
-            $data = $this->request->getData(); // << ADD THIS LINE
+            $data = $this->request->getData();
             
             // Organization email
             $mailer = new Mailer('default');
@@ -51,6 +43,36 @@ class EmailsController extends AppController
             return $this->redirect('/');
         }
     }
+
+    public function visitor()
+    {
+        if ($this->request->is('post')) {
+            $data = $this->request->getData();
+
+            // Organization email
+            $mailer = new Mailer('default');
+            $mailer
+                ->setFrom(['noreply@sipa2025.com' => 'SIPA 2025 Formulaire'])
+                ->setTo('organisation@sipa2025.com') // Change to the organization's email
+                ->setEmailFormat('html')
+                ->setSubject('Nouvelle demande de visiteur - SIPA 2025')
+                ->deliver($this->buildVisitorEmail($data));
+
+            // Visitor email confirmation
+            if (!empty($data['email'])) {
+                $visitorMailer = new Mailer('default');
+                $visitorMailer
+                    ->setFrom(['noreply@sipa2025.com' => 'SIPA 2025'])
+                    ->setTo($data['email'])
+                    ->setEmailFormat('html')
+                    ->setSubject('Confirmation de votre demande de visiteur - SIPA 2025')
+                    ->deliver($this->buildVisitorEmail($data, true));
+            }
+
+            $this->Flash->success('Votre demande a été envoyée avec succès.');
+            return $this->redirect('/');
+        }
+    }
     
     // Method for handling the additional services form
     public function services()
@@ -58,7 +80,7 @@ class EmailsController extends AppController
         if ($this->request->is('post')) {
             $data = $this->request->getData();
             
-            // Organization email
+            // Organization emailgi
             $mailer = new Mailer('default');
             $mailer
                 ->setFrom(['noreply@sipa2025.com' => 'SIPA 2025 Formulaire'])
@@ -378,6 +400,57 @@ class EmailsController extends AppController
         
         return $emailContent;
     }
+
+
+    private function buildVisitorEmail(array $data, bool $isClient = false): string
+    {
+        $clientIntro = $isClient ?
+            "<p>Merci pour votre inscription en tant que visiteur au Salon International de la Pêche et de l'Aquaculture (SIPA 2025). Voici un récapitulatif de vos informations :</p>" :
+            "<p>Une nouvelle demande de visiteur a été soumise avec les détails suivants :</p>";
+
+        $emailContent = "
+            <html>
+            <head>
+                <style>
+                    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+                    .container { max-width: 600px; margin: 0 auto; }
+                    h2 { color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; }
+                    h3 { color: #0d6efd; margin-top: 25px; }
+                    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+                    th, td { text-align: left; padding: 10px; border-bottom: 1px solid #ddd; }
+                    th { background-color: #f8f9fa; }
+                </style>
+            </head>
+            <body>
+                <div class='container'>
+                    <h2>SIPA 2025 - Formulaire de Visiteur</h2>
+                    {$clientIntro}
+                    <h3>Informations sur le visiteur</h3>
+                    <table>
+                        <tr><th>Raison Sociale</th><td>" . ($data['company_name'] ?? '') . "</td></tr>
+                        <tr><th>Registre de commerce Nº</th><td>" . ($data['registry_number'] ?? '') . "</td></tr>
+                        <tr><th>Nº Identifiant fiscal</th><td>" . ($data['tax_id'] ?? '') . "</td></tr>
+                        <tr><th>Adresse</th><td>" . ($data['address'] ?? '') . "</td></tr>
+                        <tr><th>Ville</th><td>" . ($data['city'] ?? '') . "</td></tr>
+                        <tr><th>Pays</th><td>" . ($data['country'] ?? '') . "</td></tr>
+                        <tr><th>Personne à contacter</th><td>" . ($data['contact_person'] ?? '') . "</td></tr>
+                        <tr><th>Tél.</th><td>" . ($data['phone'] ?? '') . "</td></tr>
+                        <tr><th>Fax</th><td>" . ($data['fax'] ?? '') . "</td></tr>
+                        <tr><th>Mobile</th><td>" . ($data['mobile'] ?? '') . "</td></tr>
+                        <tr><th>Email</th><td>" . ($data['email'] ?? '') . "</td></tr>
+                        <tr><th>Site Web</th><td>" . ($data['website'] ?? '') . "</td></tr>
+                    </table>
+                    " . ($isClient ? 
+                        "<p><strong>Note :</strong> Nous vous contacterons prochainement pour confirmer votre inscription en tant que visiteur.</p>" : 
+                        "<p><strong>Note :</strong> Cette demande provient d'un visiteur potentiel.</p>") . "
+                    <p>Pour toute question, n'hésitez pas à nous contacter à <a href='mailto:contact@sipa2025.com'>contact@sipa2025.com</a></p>
+                </div>
+            </body>
+            </html>
+        ";
+        return $emailContent;
+    }
+
     
     // Email content builder for visa form
     private function buildVisaEmail(array $data, bool $isClient = false): string
