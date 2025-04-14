@@ -86,7 +86,7 @@
         ]); ?>
     
     
-    <form method="POST">
+    <form method="POST" action="/emails/visa" enctype="multipart/form-data">
             <!-- SECTION 1: Visitor Professional Information -->
             <h4 data-aos="fade-right" class="mb-5">Informations Professionnelles du Visiteur</h4>
             <div class="row g-4" data-aos="fade-up">

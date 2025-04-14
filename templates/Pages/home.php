@@ -67,7 +67,7 @@
             <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
               <h2 class="text-black">SIPA 2025</h2>
               <p class="text-black">Salon International de la Pêche et de l'Aquaculture</p>
-              <p>
+              <p style="text-align: justify;">
                 La 10ᵉ édition du Salon International de la Pêche et de l’Aquaculture se tiendra à Oran du 6 au 9
                 novembre 2025.
                 Cet événement incontournable réunit les professionnels, institutionnels, chercheurs et investisseurs du
@@ -91,7 +91,7 @@
                     <h4>Exposants</h4>
                     <p>Réservez votre stand pour présenter vos produits et services aux professionnels du secteur.</p>
                     <div class="text-center mt-3">
-                      <a href="/reservationstand" class="btn btn-primary btn-md">Réserver votre stand</a>
+                      <a href="/reservationstand" class="btn btn-primary btn-md">Réserver stand</a>
                     </div>
                   </div>
                 </div><!-- End Icon Box -->
@@ -101,9 +101,13 @@
                     <i class="bi bi-person-check"></i>
                     <h4>Visiteurs</h4>
                     <p>Inscrivez-vous en tant que visiteur pour découvrir les dernières innovations du secteur.</p>
-                    <div class="text-center mt-3">
-                      <a href="/formulaireinscriptionnational" class="btn btn-primary btn-md text-white">Inscription visiteur</a>
+
+                    <div style="margin-top:40px;" >
+                      <a href="/visiteurs" class="btn btn-primary btn-md">Inscription visiteurs</a>
                     </div>
+
+
+                    
                   </div>
                 </div><!-- End Icon Box -->
 
@@ -112,7 +116,7 @@
                     <i class="bi bi-pass"></i>
                     <h4>Visa</h4>
                     <p>Besoin d’un visa pour participer ? Remplissez votre demande dès maintenant en ligne.</p>
-                    <div style="margin-top:40px;" class="text-center mt-8 ">
+                    <div style="margin-top:40px;" >
                       <a href="/formulairevisa" class="btn btn-primary btn-md">Inscription visa</a>
                     </div>
                   </div>
@@ -160,12 +164,15 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
+
         <div class="row gy-4">
+
+        <h3>sipa en chiffre 2024</h3>
 
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fa-solid fa-flag"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="17" data-purecounter-duration="1"
+              <span data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="1"
                 class="purecounter"></span>
               <p>Pays</p>
             </div>
@@ -174,7 +181,7 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fa-solid fa-store"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="170" data-purecounter-duration="1"
+              <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1"
                 class="purecounter"></span>
               <p>Exposants</p>
             </div>
@@ -183,7 +190,7 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fa-solid fa-building"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+              <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1"
                 class="purecounter"></span>
               <p>Sociétés internationales</p>
             </div>
@@ -199,6 +206,48 @@
           </div><!-- End Stats Item -->
 
         </div>
+
+        <div class="row gy-4 mt-3">
+
+                <h3 style="margin-top:32px;">sipa en chiffre 2025</h3>
+
+  <div class="col-lg-3 col-md-6 d-flex mt-3 flex-column align-items-center">
+    <i class="fa-solid fa-flag"></i>
+     <div class="stats-item">
+    <span data-purecounter-start="0" data-purecounter-end="17" data-purecounter-duration="1"
+      class="purecounter"></span>
+    <p>Pays</p>
+  </div>
+</div><!-- End Stats Item -->
+
+<div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+  <i class="fa-solid fa-store"></i>
+  <div class="stats-item">
+    <span data-purecounter-start="0" data-purecounter-end="170" data-purecounter-duration="1"
+      class="purecounter"></span>
+    <p>Exposants</p>
+  </div>
+</div><!-- End Stats Item -->
+
+<div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+  <i class="fa-solid fa-building"></i>
+  <div class="stats-item">
+    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+      class="purecounter"></span>
+    <p>Sociétés internationales</p>
+  </div>
+</div><!-- End Stats Item -->
+
+<div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+  <i class="fa-solid fa-users"></i>
+  <div class="stats-item">
+    <span data-purecounter-start="0" data-purecounter-end="22000" data-purecounter-duration="1"
+      class="purecounter"></span>
+    <p>Visiteurs</p>
+  </div>
+</div><!-- End Stats Item -->
+
+</div>
 
       </div>
 

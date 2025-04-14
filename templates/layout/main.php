@@ -72,10 +72,10 @@ $cakeDescription = 'Sipa-algerie: 2025';
             <div class="container position-relative d-flex align-items-center justify-content-between">
 
                 <!-- Logo -->
-                <a href="/" class="logo d-flex align-items-center me-auto">
+                <a href="img/logo.jpg" class="logo d-flex align-items-center me-auto">
 
                 
-                <img src="img/Flag_of_Algeria.gif" alt="">
+                <img src="img/Flag_of_Algeria.gif" alt=""> 
                     <img src="img/logo.jpg" alt="CAPA">
 
                 </a>

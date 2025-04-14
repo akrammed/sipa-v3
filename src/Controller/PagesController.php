@@ -204,4 +204,16 @@ class PagesController extends AppController
         $this->set('description', 'formulairevisa');
         $this->set('keywords', 'formulairevisa');
     }
+
+
+
+    public function visiteurs()
+    {
+        $this->viewBuilder()->setLayout('main');
+        $this->set('title', 'visiteurs');
+        $this->set('description', 'visiteurs');
+        $this->set('keywords', 'visiteurs');
+    }
+
+    
 }
