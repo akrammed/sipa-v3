@@ -479,9 +479,9 @@
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
                 <h3>Appelez-nous</h3>
-                <p>+213-555-57-80-16</p>
-                <p>+213-661-13-11-17 (Anglais)</p>
-                <p>Whatsapp: +213-555-38-15-74</p>
+                    <p><strong>Whatsapp:</strong>  +213-560-364-008</p>
+                    <p><strong>Fixe/Fax:</strong> +213-20-30-56-54</p>
+                   
               </div>
             </div><!-- End Info Item -->
 
@@ -489,7 +489,7 @@
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Envoyez-nous un e-mail</h3>
-                <p>info@sipalgerie.dz</p>
+                <p><strong>Email:</strong> sipa@capaalgerie.dz</p>
               </div>
             </div><!-- End Info Item -->
 

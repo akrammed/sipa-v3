@@ -44,6 +44,8 @@ $cakeDescription = 'Sipa-algerie: 2025';
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"> 
@@ -70,6 +72,38 @@ $cakeDescription = 'Sipa-algerie: 2025';
     color: #007bff; /* Or your highlight color */
    
 }
+
+.social-fixed {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: transparent;
+  padding: 10px;
+  z-index: 9999;
+}
+
+.social-fixed a {
+  width: 45px;
+  height: 45px;
+  background: #1977cc;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-fixed a:hover {
+  background: #007bff;
+}
+
 
     </style>
     <script>
@@ -120,6 +154,23 @@ $cakeDescription = 'Sipa-algerie: 2025';
 </script>
 
     <header id="header" class="header sticky-top">
+
+    <!-- Social Media Icons -->
+    <div class="social-fixed">
+  <a href="https://www.facebook.com/SipaAlgerie/?locale=fr_FR" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://x.com/capaalgerie" target="_blank">
+    <i class="fab fa-x"></i>
+  </a>
+  <a href="https://www.linkedin.com/company/capaalgerie/" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://www.youtube.com/@capaalgerie" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+</div>
+
 
 
         <!-- Branding + Navigation -->
@@ -191,14 +242,16 @@ $cakeDescription = 'Sipa-algerie: 2025';
         <div class="row gy-4">
             <div class="col-lg-4 col-md-6 footer-about">
                 <a href="index.html" class="logo d-flex align-items-center">
-                    <span class="sitename">Capa algerie</span>
+                    <span class="sitename">sipa algerie</span>
                 </a>
                 <div class="footer-contact pt-3">
-                    <p><strong>Mobile:</strong> +213-555-57-80-16</p>
+                
                     <!-- <p><strong>Mobile (English):</strong> +213-661-13-11-17</p> -->
                     <p><strong>Whatsapp:</strong>  +213-560-364-008</p>
                     <p><strong>Fixe/Fax:</strong> +213-20-30-56-54</p>
-                    <p><strong>Adresse:</strong> Cité 400 Logements Bât. 3A, N° 3/4 El Hammamet, Chéraga, ALGER</p>
+                    <p><strong>Email:</strong> sipa@capaalgerie.dz</p>
+
+                   
                     <p><strong>Site du ministère:</strong> <a href="http://www.mpeche.gov.dz"
                             target="_blank">www.mpeche.gov.dz</a></p>
                 </div>
@@ -281,6 +334,7 @@ $cakeDescription = 'Sipa-algerie: 2025';
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
+            
 
     <!-- Preloader -->
     <div id="preloader"></div>

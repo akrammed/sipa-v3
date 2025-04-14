@@ -40,7 +40,7 @@
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Envoyez-nous un e-mail</h3>
-                <p>info@sipalgerie.dz</p>
+                <p>sipa@capaalgerie.dz</p>
               </div>
             </div><!-- End Info Item -->
 
