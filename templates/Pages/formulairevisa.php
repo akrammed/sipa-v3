@@ -87,6 +87,9 @@
     
     
     <form method="POST" action="/emails/visa" enctype="multipart/form-data">
+        
+    <!-- CSRF Token (REQUIRED) -->
+    <input type="hidden" name="_csrfToken" value="<?php echo $this->request->getAttribute('csrfToken'); ?>">
             <!-- SECTION 1: Visitor Professional Information -->
             <h4 data-aos="fade-right" class="mb-5">Informations Professionnelles du Visiteur</h4>
             <div class="row g-4" data-aos="fade-up">

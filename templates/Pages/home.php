@@ -40,7 +40,7 @@
 
 .gallery-item img {
     width: 1000px;
-    height: 300px;
+    height: 200px;
     display: block;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -102,7 +102,7 @@
                     <h4>Visiteurs</h4>
                     <p>Inscrivez-vous en tant que visiteur pour découvrir les dernières innovations du secteur.</p>
 
-                    <div style="margin-top:40px;" >
+                    <div style="margin-top:20px;" >
                       <a href="/visiteurs" class="btn btn-primary btn-md">Inscription visiteurs</a>
                     </div>
 
@@ -116,7 +116,7 @@
                     <i class="bi bi-pass"></i>
                     <h4>Visa</h4>
                     <p>Besoin d’un visa pour participer ? Remplissez votre demande dès maintenant en ligne.</p>
-                    <div style="margin-top:40px;" >
+                    <div style="margin-top:43px;" >
                       <a href="/formulairevisa" class="btn btn-primary btn-md">Inscription visa</a>
                     </div>
                   </div>
