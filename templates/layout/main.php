@@ -62,8 +62,63 @@ $cakeDescription = 'Sipa-algerie: 2025';
         .header-item{
             text-decoration: none;
             font-weight: 600;
+
+
         }
+
+        .navmenu .dropdown.active > a {
+    color: #007bff; /* Or your highlight color */
+   
+}
+
     </style>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPath = window.location.pathname;
+        const headerLinks = document.querySelectorAll(".navmenu .header-item");
+
+        headerLinks.forEach(link => {
+            const linkPath = link.getAttribute("href");
+
+            // If exact path or current path starts with the link href
+            if (linkPath && currentPath.startsWith(linkPath)) {
+                // Remove active class from all
+                headerLinks.forEach(l => l.classList.remove("active"));
+
+                // Add active to current link
+                link.classList.add("active");
+
+                // Also add active class to parent <li> if in dropdown
+                const parentLi = link.closest("li");
+                if (parentLi) {
+                    parentLi.classList.add("active");
+
+                    // Also activate grandparent dropdown li (for nested links)
+                    const dropdownLi = parentLi.closest(".dropdown");
+                    if (dropdownLi) {
+                        dropdownLi.classList.add("active");
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll(".navmenu .header-item");
+        const currentPath = window.location.pathname;
+
+        links.forEach(link => {
+            // Match path only, ignore domain
+            if (link.getAttribute("href") === currentPath) {
+                links.forEach(l => l.classList.remove("active")); // Remove from all
+                link.classList.add("active"); // Add to current
+            }
+        });
+    });
+</script>
+
     <header id="header" class="header sticky-top">
 
 
@@ -72,13 +127,14 @@ $cakeDescription = 'Sipa-algerie: 2025';
             <div class="container position-relative d-flex align-items-center justify-content-between">
 
                 <!-- Logo -->
-                <a href="img/logo.jpg" class="logo d-flex align-items-center me-auto">
+                <img width="60" src="img/Flag_of_Algeria.gif" alt=""> 
+                <a href="/" class="logo d-flex align-items-center me-auto"><img src="img/logo.jpg" alt="CAPA"> </a>
 
                 
-                <img src="img/Flag_of_Algeria.gif" alt=""> 
-                    <img src="img/logo.jpg" alt="CAPA">
+           
+                    
 
-                </a>
+           
 
                 <!-- Navigation -->
                 <nav id="navmenu" class="navmenu">

@@ -6,9 +6,9 @@
                     <div class="col-lg-6">
                         <h2 class="mb-4">Présentation du Secteur</h2>
 
-                        <p>Le secteur de la pêche et des produits halieutiques est stratégique pour renforcer la
+                        <p style="text-align: justify;">Le secteur de la pêche et des produits halieutiques est stratégique pour renforcer la
                             sécurité alimentaire, le développement durable et soutenir l'économie nationale.</p>
-                        <p>Les récentes initiatives ont stimulé la production et encouragé les investissements dans
+                        <p style="text-align: justify;">Les récentes initiatives ont stimulé la production et encouragé les investissements dans
                             divers domaines :</p>
                         <ul>
                             <li>Aquaculture marine et d'eau douce</li>
@@ -46,7 +46,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 order-lg-1" data-aos="fade-right">
                         <h3 class="mb-4">Aquaculture</h3>
-                        <p>L'aquaculture connaît un dynamisme notable, contribuant à l'économie nationale et à la
+                        <p style="text-align: justify;">L'aquaculture connaît un dynamisme notable, contribuant à l'économie nationale et à la
                             sécurité alimentaire. Actuellement, <strong>17 fermes aquacoles</strong> en mer produisent
                             <strong>8 000 tonnes</strong>, avec un objectif de <strong>24 000 tonnes</strong> d'ici
                             2024. L'ostréiculture compte <strong>25 projets</strong> répartis sur 12 wilayas, avec une
@@ -69,7 +69,7 @@
                     </div>
                     <div class="col-lg-6" data-aos="fade-left">
                         <h3 class="mb-4">Construction et Réparation Navale</h3>
-                        <p>La flotte de pêche a été renforcée par <strong>161 nouveaux bateaux</strong>, dont trois de
+                        <p style="text-align: justify;">La flotte de pêche a été renforcée par <strong>161 nouveaux bateaux</strong>, dont trois de
                             haute mer de 35 mètres. Des ateliers dédiés à la construction, l'entretien et la réparation
                             des bateaux de pêche ont été établis, avec un taux d'intégration local supérieur à
                             <strong>60 %</strong>.
@@ -86,7 +86,7 @@
                     <h2>Développement de la Pêche en Haute Mer</h2>
                 </div><!-- End Section Title -->
 
-                <p class="text-center">Le quota annuel de pêche au thon rouge a été atteint, avec <strong>2 023
+                <p style="text-align: justify;" class="text-center">Le quota annuel de pêche au thon rouge a été atteint, avec <strong>2 023
                         tonnes</strong> pour la saison, soit une augmentation de <strong>368 tonnes</strong>. <strong>32
                         navires</strong>, dont trois construits localement, ont participé à cette activité.</p>
             </div>
@@ -98,7 +98,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 order-lg-1" data-aos="fade-right">
                         <h3 class="mb-4">Industries de Transformation</h3>
-                        <p>L'Algérie dispose de <strong>16 unités de transformation</strong> des produits de la pêche,
+                        <p style="text-align: justify;">L'Algérie dispose de <strong>16 unités de transformation</strong> des produits de la pêche,
                             avec une capacité de production supérieure à <strong>20 000 tonnes</strong> par an, visant à
                             améliorer les conditions économiques et sociales des professionnels.</p>
                     </div>
@@ -154,7 +154,7 @@
                             <a href="#" class="stretched-link">
                                 <h3>Infrastructures Modernes</h3>
                             </a>
-                            <p>Des ports et installations de pointe assurant le développement logistique et technique.
+                            <p style="text-align: justify;">Des ports et installations de pointe assurant le développement logistique et technique.
                             </p>
                         </div>
                     </div><!-- End Service Item -->
@@ -167,7 +167,7 @@
                             <a href="#" class="stretched-link">
                                 <h3>Incitations pour Investisseurs</h3>
                             </a>
-                            <p>Des avantages fiscaux et financiers attractifs pour stimuler l'investissement dans le
+                            <p style="text-align: justify;">Des avantages fiscaux et financiers attractifs pour stimuler l'investissement dans le
                                 secteur.</p>
                         </div>
                     </div><!-- End Service Item -->

@@ -17,7 +17,15 @@ class EmailsController extends AppController
     public function participation()
     {
         if ($this->request->is('post')) {
-            $data = $this->request->getData();
+            try {
+                $this->getRequest()->getAttribute('csrfToken'); // Triggers validation
+            } catch (InvalidCsrfTokenException $e) {
+                $this->Flash->error('Invalid CSRF token');
+                return $this->redirect($this->referer());
+            }
+
+
+            $data = $this->request->getData(); // << ADD THIS LINE
             
             // Organization email
             $mailer = new Mailer('default');

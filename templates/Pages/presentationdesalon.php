@@ -17,7 +17,7 @@
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div  style="text-align: justify;" class="col-lg-6">
                         <p>En Algérie, à l’instar des pays méditerranéens, la pêche et l’aquaculture sont appelées à
                             jouer un rôle de plus en plus important. Elles constituent un enjeu majeur pour les
                             prochaines années. Ce segment d’activité, qui est à promouvoir, a connu ces dernières années
@@ -109,12 +109,12 @@
         </section><!-- /Stats Section -->
 
         <!-- Objectives Section -->
-        <section id="departments" class="departments section">
+        <section  id="departments" class="departments section">
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
                 <h2>Nos Objectifs</h2>
-                <p>Nos objectifs sont de valoriser et de promouvoir les activités dans le domaine de la pêche et de
+                <p style="text-align: justify;">Nos objectifs sont de valoriser et de promouvoir les activités dans le domaine de la pêche et de
                     l’aquaculture.</p>
             </div><!-- End Section Title -->
 
@@ -147,9 +147,9 @@
                                 <div class="row">
                                     <div class="col-lg-8 details order-2 order-lg-1">
                                         <h3>Valoriser les acquis et accéder aux technologies de pointe</h3>
-                                        <p class="fst-italic">Valoriser les acquis et accéder aux technologies de pointe
+                                        <p style="text-align: justify;" class="fst-italic">Valoriser les acquis et accéder aux technologies de pointe
                                             dans le domaine de la pêche et de l’aquaculture.</p>
-                                        <p>Nous visons à mettre en avant les connaissances acquises et à faciliter
+                                        <p style="text-align: justify;">Nous visons à mettre en avant les connaissances acquises et à faciliter
                                             l'accès aux dernières technologies dans le secteur de la pêche et de
                                             l’aquaculture, permettant ainsi de renforcer les capacités des acteurs du
                                             domaine.</p>
@@ -164,9 +164,9 @@
                                 <div class="row">
                                     <div class="col-lg-8 details order-2 order-lg-1">
                                         <h3>Encourager la coopération et les partenariats</h3>
-                                        <p class="fst-italic">Encourager la coopération et les partenariats pour
+                                        <p style="text-align: justify;" class="fst-italic">Encourager la coopération et les partenariats pour
                                             diversifier les activités de pêche et d’aquaculture.</p>
-                                        <p>Nous encourageons la création de partenariats stratégiques et la
+                                        <p style="text-align: justify;">Nous encourageons la création de partenariats stratégiques et la
                                             collaboration entre les différents acteurs pour diversifier les activités de
                                             pêche et d’aquaculture, créant ainsi des synergies et de nouvelles
                                             opportunités dans ces secteurs.</p>
@@ -181,9 +181,9 @@
                                 <div class="row">
                                     <div class="col-lg-8 details order-2 order-lg-1">
                                         <h3>Promotion de l’économie bleue</h3>
-                                        <p class="fst-italic">Promotion du concept de l’économie bleue et de son rôle
+                                        <p style="text-align: justify;" class="fst-italic">Promotion du concept de l’économie bleue et de son rôle
                                             dans l’économie nationale.</p>
-                                        <p>Nous visons à promouvoir l’économie bleue, en soulignant son rôle clé dans le
+                                        <p style="text-align: justify;">Nous visons à promouvoir l’économie bleue, en soulignant son rôle clé dans le
                                             développement économique durable du pays, notamment par l’exploitation
                                             responsable des ressources maritimes et aquatiques.</p>
                                     </div>
@@ -197,10 +197,10 @@
                                 <div class="row">
                                     <div class="col-lg-8 details order-2 order-lg-1">
                                         <h3>Renforcer le travail consultatif et participatif</h3>
-                                        <p class="fst-italic">Renforcer le travail consultatif et participatif entre les
+                                        <p style="text-align: justify;" class="fst-italic">Renforcer le travail consultatif et participatif entre les
                                             différents acteurs afin de préserver et de protéger les ressources marines
                                             et de développer une aquaculture durable.</p>
-                                        <p>Nous encourageons une approche collaborative entre les parties prenantes afin
+                                        <p style="text-align: justify;">Nous encourageons une approche collaborative entre les parties prenantes afin
                                             de développer des solutions communes pour la préservation des ressources
                                             marines et promouvoir des pratiques durables dans l’aquaculture.</p>
                                     </div>

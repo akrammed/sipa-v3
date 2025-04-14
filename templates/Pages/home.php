@@ -40,7 +40,7 @@
 
 .gallery-item img {
     width: 1000px;
-    height: auto;
+    height: 300px;
     display: block;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -329,8 +329,8 @@
             <div class="gallery-slider">
 
                 <div class="gallery-item">
-                    <a href="img/img1.jpg" class="glightbox" data-gallery="images-gallery">
-                        <img src="img/img1.jpg" alt="" class="img-fluid rounded">
+                    <a href="img/imag1.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/imag1.jpg" alt="" class="img-fluid rounded">
                     </a>
                 </div>
 

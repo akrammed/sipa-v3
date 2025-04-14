@@ -410,8 +410,14 @@ return [
      * To use database sessions, load the SQL file located at config/schema/sessions.sql
      */
     'Session' => [
-        'defaults' => 'php',
+    'defaults' => 'php',
+    'ini' => [
+        'session.cookie_secure' => false, // Set to `true` for HTTPS
+        'session.cookie_httponly' => true,
+        'session.cookie_samesite' => 'Lax', // Prevents CSRF
+        'session.save_path' => TMP . 'sessions', // Verify folder exists/writable
     ],
+],
 
     /**
      * DebugKit configuration.
