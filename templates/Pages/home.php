@@ -167,7 +167,7 @@
 
         <div class="row gy-4">
 
-        <h3>sipa en chiffre 2024</h3>
+        <h3>Sipa en chiffre 2024</h3>
 
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fa-solid fa-flag"></i>
@@ -207,9 +207,11 @@
 
         </div>
 
+        <hr>
+
         <div class="row gy-4 mt-3">
 
-                <h3 style="margin-top:32px;">sipa en chiffre 2025</h3>
+                <h3 style="margin-top:32px; color : #0056b3; ">Estimation sur le salon SIPA 2025</h3>
 
   <div class="col-lg-3 col-md-6 d-flex mt-3 flex-column align-items-center">
     <i class="fa-solid fa-flag"></i>

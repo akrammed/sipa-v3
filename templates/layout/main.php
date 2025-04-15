@@ -285,15 +285,35 @@ $cakeDescription = 'Sipa-algerie: 2025';
                 </ul>
             </div>
 
-            <div class="col-lg-4 col-md-6 footer-links">
-                <h5>Le jour J approche !</h5>
-                <p>Ne vous contentez pas de visiter notre site, venez nous rencontrer au salon !</p>
-                <div id="countdown" style="font-size: 18px; font-weight: bold; margin-top: 10px;">
-                    <span id="days">00</span> jours 
-                    <span id="hours">00</span> h 
-                    <span id="minutes">00</span> min
-                </div>
-            </div>
+            <div class="col-lg-4 col-md-6 footer-links" style="">
+    <h5 style="font-size: 20px; font-weight: 600; color: #333; margin-bottom: 10px;">
+        <i class="fas fa-calendar-alt" style="color: #3498db; margin-right: 8px;"></i>
+        Le jour J approche !
+    </h5>
+    <p style="">
+        <i class="fas fa-map-marker-alt" style="color: #3498db; margin-right: 6px;"></i>
+        Ne vous contentez pas de visiter notre site, venez nous rencontrer au salon !
+    </p>
+    <div id="countdown" style="
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 15px;
+    padding: 15px 20px;
+    background: #f4f6f8;
+    border-left: 5px solid #3498db;
+    border-radius: 10px;
+    color: #2c3e50;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+">
+    <i class="fas fa-hourglass-start" style="color: #3498db; margin-right: 10px;"></i>
+    <span id="days">00</span> <small>jours</small> 
+    <span id="hours">00</span> <small>h</small> 
+    <span id="minutes">00</span> <small>min</small> 
+    <span id="seconds">00</span> <small>s</small>
+</div>
+
+</div>
         </div>
     </div>
 
@@ -308,27 +328,34 @@ $cakeDescription = 'Sipa-algerie: 2025';
 
 <!-- Countdown Script -->
 <script>
+    // Set the date of the SIPA 2025 event (change it as needed)
+    const eventDate = new Date("2025-10-15T09:00:00").getTime();
+
     const countdown = () => {
-        const countDate = new Date("November 6, 2025 00:00:00").getTime();
         const now = new Date().getTime();
-        const gap = countDate - now;
+        const distance = eventDate - now;
 
-        const second = 1000;
-        const minute = second * 60;
-        const hour = minute * 60;
-        const day = hour * 24;
+        if (distance < 0) {
+            document.getElementById("countdown").innerHTML = "<i class='fas fa-check-circle' style='color:green;'></i> Événement en cours !";
+            return;
+        }
 
-        const days = Math.floor(gap / day);
-        const hours = Math.floor((gap % day) / hour);
-        const minutes = Math.floor((gap % hour) / minute);
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("days").innerText = days;
-        document.getElementById("hours").innerText = hours;
-        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("days").innerText = String(days).padStart(2, '0');
+        document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
     };
 
+    // Call immediately, then every second
+    countdown();
     setInterval(countdown, 1000);
 </script>
+
 
 
     <!-- Scroll Top -->

@@ -95,6 +95,10 @@ return function (RouteBuilder $routes): void {
 
          $builder->connect('/email/send', ['controller' => 'Emails', 'action' => 'national']);
 
+         $builder->connect('/confirmation', ['controller' => 'Pages', 'action' => 'confirmation']);
+
+
+
 
 
         /*

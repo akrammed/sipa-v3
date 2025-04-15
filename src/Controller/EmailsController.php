@@ -39,8 +39,8 @@ class EmailsController extends AppController
                     ->deliver($this->buildParticipationEmail($data, true));
             }
             
-            $this->Flash->success('Votre demande a été envoyée avec succès.');
-            return $this->redirect('/');
+
+            return $this->redirect('/confirmation');
         }
     }
 
@@ -69,8 +69,8 @@ class EmailsController extends AppController
                     ->deliver($this->buildVisitorEmail($data, true));
             }
 
-            $this->Flash->success('Votre demande a été envoyée avec succès.');
-            return $this->redirect('/');
+
+            return $this->redirect('/confirmation');
         }
     }
     
@@ -100,8 +100,8 @@ class EmailsController extends AppController
                     ->deliver($this->buildServicesEmail($data, true));
             }
             
-            $this->Flash->success('Votre demande a été envoyée avec succès.');
-            return $this->redirect('/');
+
+            return $this->redirect('/confirmation');
         }
     }
     
@@ -130,9 +130,11 @@ class EmailsController extends AppController
                 
             // Add attachment if passport scan was provided
             if ($passportFile) {
-                $mailer->addAttachment($passportFile->getClientFilename(), [
-                    'file' => $passportFile->getStream()->getMetadata('uri'),
-                    'mimetype' => $passportFile->getClientMediaType()
+                $mailer->setAttachments([
+                    $passportFile->getClientFilename() => [
+                        'file' => $passportFile->getStream()->getMetadata('uri'),
+                        'mimetype' => $passportFile->getClientMediaType(),
+                    ],
                 ]);
             }
             
@@ -147,8 +149,8 @@ class EmailsController extends AppController
                     ->deliver($this->buildVisaEmail($data, true));
             }
             
-            $this->Flash->success('Votre demande de visa a été envoyée avec succès.');
-            return $this->redirect('/');
+
+            return $this->redirect('/confirmation');
         }
     }
     

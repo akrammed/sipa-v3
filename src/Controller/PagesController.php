@@ -205,6 +205,15 @@ class PagesController extends AppController
         $this->set('keywords', 'formulairevisa');
     }
 
+    public function confirmation()
+    {
+        $this->viewBuilder()->setLayout('main');
+        $this->set('title', 'confirmation');
+        $this->set('description', 'confirmation');
+        $this->set('keywords', 'confirmation');
+    }
+
+
 
 
     public function visiteurs()
