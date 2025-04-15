@@ -218,6 +218,8 @@ function toggleOtherSector(select) {
                 </div>
             </div>
 
+            <h4 data-aos="fade-right" class="mt-5">Réservation de Stand</h4>
+
             <!-- Electricité par jour -->
             <div class="floating-label mb-4">
                 <select class="form-select" id="electricity" name="electricity" required>
@@ -237,17 +239,67 @@ function toggleOtherSector(select) {
             </div>
 
             <div class="row g-4 mb-3">
-                <div class="col-md-6 floating-label">
-                    <input type="number" class="form-control" id="area" name="area" min="12" required>
-                    <label for="area">Superficie demandée (m²)</label>
-                </div>
+            <div class="form-group">
+  <label><strong>Choix du Stand et Superficie Commandée</strong></label><br>
+  
+  <label><input type="radio" name="standType" value="17000" required> Stand aménagé (17.000 DA/m²)</label><br>
+  <label><input type="radio" name="standType" value="12000"> Stand non aménagé (12.000 DA/m²)</label><br>
+  <label><input type="radio" name="standType" value="10000"> Emplacement découvert (10.000 DA/m²)</label>
+</div>
+
+<div id="surfaceSelectContainer" class="form-group" style="display:none;">
+  <label for="surfaceSelect">Superficie demandée (m²)</label>
+  <select id="surfaceSelect" class="form-control" name="area" required>
+    <option value="">-- Choisir une superficie --</option>
+    <option value="12">12 m²</option>
+    <option value="15">15 m²</option>
+    <option value="18">18 m²</option>
+    <option value="21">21 m²</option>
+    <option value="24">24 m²</option>
+    <option value="27">27 m²</option>
+    <option value="36">36 m²</option>
+    <option value="48">48 m²</option>
+    <option value="54">54 m²</option>
+    <option value="60">60 m²</option>
+  </select>
+</div>
+
+<!-- <div id="totalPrice" style="margin-top:10px;font-weight:bold;"></div> -->
+
+<script>
+  const standRadios = document.querySelectorAll('input[name="standType"]');
+  const surfaceSelectContainer = document.getElementById("surfaceSelectContainer");
+  const surfaceSelect = document.getElementById("surfaceSelect");
+  const totalPriceDiv = document.getElementById("totalPrice");
+
+  let selectedPrice = 0;
+
+  standRadios.forEach(radio => {
+    radio.addEventListener("change", function () {
+      selectedPrice = parseInt(this.value);
+      surfaceSelectContainer.style.display = "block";
+      totalPriceDiv.innerHTML = ""; // Reset total
+    });
+  });
+
+  surfaceSelect.addEventListener("change", function () {
+    const surface = parseInt(this.value);
+    if (surface && selectedPrice) {
+      const total = surface * selectedPrice;
+      totalPriceDiv.innerHTML = `💰 Prix total : <strong>${total.toLocaleString()} DA</strong>`;
+    } else {
+      totalPriceDiv.innerHTML = "";
+    }
+  });
+</script>
+
                 <div class="col-md-6 floating-label">
                     <select class="form-select" id="facades" name="facades" required>
                         <option value="0">Sans supplément</option>
                         <option value="1">1 façade sans supplément</option>
-                        <option value="2">2 façades - Nouveau Prix</option>
-                        <option value="3">3 façades - Nouveau Prix</option>
-                        <option value="4">4 façades - Nouveau Prix</option>
+                        <option value="2">2 façades - 17.000 Da</option>
+                        <option value="3">3 façades - 22.000 Da</option>
+                        <option value="4">4 façades - 31.000 Da</option>
                     </select>
                     <label for="facades">Façades supplémentaires</label>
                 </div>
@@ -269,14 +321,14 @@ function toggleOtherSector(select) {
                 <input class="form-check-input" type="checkbox" id="pub1" name="pub1" value="1">
                 <label class="form-check-label" for="pub1">
                     4ème page de couverture
-                    <span class="price-tag">110.000 DA</span>
+                    <span class="price-tag">120.000 DA</span>
                 </label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="pub2" name="pub2" value="1">
                 <label class="form-check-label" for="pub2">
                     3ème page de couverture
-                    <span class="price-tag">85.000 DA</span>
+                    <span class="price-tag">100.000 DA</span>
                 </label>
             </div>
             <div class="form-check">
@@ -292,14 +344,7 @@ function toggleOtherSector(select) {
                     1/2 page intérieure couleur
                     <span class="price-tag">30.000 DA</span>
                 </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="pub5" name="pub5" value="1">
-                <label class="form-check-label" for="pub5">
-                    Présentation vidéo de votre entreprise
-                    <span class="price-tag">50.000 DA</span>
-                </label>
-            </div>
+            </div>  
         </div>
 
         <!-- Services supplémentaires -->
@@ -363,9 +408,10 @@ function toggleOtherSector(select) {
             </div>
             <div class="col-md-6 floating-label">
                 <select class="form-select" id="macarons" name="macarons" required>
-                    <option value="1">1 badge = 1 macaron</option>
+                    <option value="1">2 badge = 1 macaron</option>
                     <option value="2">4 badges = 2 macarons</option>
                     <option value="3">6 badges = 3 macarons</option>
+                    <option value="3">10 badges = 5 macarons</option>
                 </select>
                 <label for="macarons">Macarons</label>
             </div>

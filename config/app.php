@@ -411,12 +411,7 @@ return [
      */
     'Session' => [
     'defaults' => 'php',
-    'ini' => [
-        'session.cookie_secure' => false, // Set to `true` for HTTPS
-        'session.cookie_httponly' => true,
-        'session.cookie_samesite' => 'Lax', // Prevents CSRF
-        'session.save_path' => TMP . 'sessions', // Verify folder exists/writable
-    ],
+
 ],
 
     /**
