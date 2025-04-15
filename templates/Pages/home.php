@@ -50,6 +50,100 @@
 .gallery-item img:hover {
     transform: scale(1.05);
 }
+
+        
+.partenaires-section {
+            padding: 60px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #2d4b8e;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .blue-divider {
+            width: 120px;
+            height: 4px;
+            background-color: #0099cc;
+            margin: 0 auto 50px;
+            display: block;
+        }
+        
+        .partners-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+        
+        .partner-logo {
+            width: 160px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(0%);
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover img {
+            transform: scale(1.05);
+        }
+        
+        .plan-section {
+            margin-top: 100px;
+            padding-bottom: 60px;
+        }
+        
+        .plan-button {
+            display: inline-block;
+            background-color: #0099cc;
+            color: white;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .plan-button:hover {
+            background-color: #0077aa;
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .partners-container {
+                gap: 15px;
+            }
+            
+            .partner-logo {
+                width: 120px;
+                height: 80px;
+                margin: 5px;
+            }
+        }
  </style>
     <!-- Hero Section -->
     <section id="hero" class="hero section light-background">
@@ -331,6 +425,40 @@
             <div class="gallery-slider">
 
                 <div class="gallery-item">
+                    <a href="img/i1.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/i1.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
+
+                <div class="gallery-item">
+                    <a href="img/i2.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/i2.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
+
+                <div class="gallery-item">
+                    <a href="img/i3.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/i3.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
+
+                <div class="gallery-item">
+                    <a href="img/i4.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/i4.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="img/i5.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/i5.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="img/i6.jpg" class="glightbox" data-gallery="images-gallery">
+                        <img src="img/i6.jpg" alt="" class="img-fluid rounded">
+                    </a>
+                </div>
+     
+                <div class="gallery-item">
                     <a href="img/imag1.jpg" class="glightbox" data-gallery="images-gallery">
                         <img src="img/imag1.jpg" alt="" class="img-fluid rounded">
                     </a>
@@ -429,8 +557,228 @@
     </div>
 
 </section><!-- /Gallery Section -->
+<section class="sponsors-section">
+    <h2 class="section-title">NOS SPONSORS</h2>
+    <span class="blue-divider"></span>
+    
+    <div class="sponsors-container">
+        <!-- Sponsor 1 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor1.png" alt="Logo Sponsor 1">
+        </div>
+        
+        <!-- Sponsor 2 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor2.jpg" alt="Logo Sponsor 2">
+        </div>
+        
+        <!-- Sponsor 3 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor3.jpg" alt="Logo Sponsor 3">
+        </div>
+        
+        <!-- Sponsor 4 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor4.png" alt="Logo Sponsor 4">
+        </div>
+        
+        <!-- Sponsor 5 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor5.png" alt="Logo Sponsor 5">
+        </div>
+        
+        <!-- Sponsor 6 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor6.png" alt="Logo Sponsor 6">
+        </div>
+        
+        <!-- Sponsor 7 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor7.png" alt="Logo Sponsor 7">
+        </div>
+        
+        <!-- Sponsor 8 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor8.jpeg" alt="Logo Sponsor 8">
+        </div>
+        
+        <!-- Sponsor 9 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor9.jpg" alt="Logo Sponsor 9">
+        </div>
+        
+        <!-- Sponsor 10 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor10.jpg" alt="Logo Sponsor 10">
+        </div>
+        
+        <!-- Sponsor 11 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor11.jpg" alt="Logo Sponsor 11">
+        </div>
+        
+        <!-- Sponsor 12 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor12.png" alt="Logo Sponsor 12">
+        </div>
+        
+        <!-- Sponsor 13 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor13.png" alt="Logo Sponsor 13">
+        </div>
+        
+        <!-- Sponsor 14 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor14.png" alt="Logo Sponsor 14">
+        </div>
+        
+        <!-- Sponsor 15 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor15.png" alt="Logo Sponsor 15">
+        </div>
+        
+        <!-- Sponsor 16 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor16.png" alt="Logo Sponsor 16">
+        </div>
+        
+        <!-- Sponsor 17 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor17.png" alt="Logo Sponsor 17">
+        </div>
+        
+        <!-- Sponsor 18 -->
+        <div class="sponsor-logo">
+            <img src="img/sponsor18.png" alt="Logo Sponsor 18">
+        </div>
+        
 
+    </div>
+</section>
 
+<style>
+    .sponsors-section {
+        padding: 60px 0;
+        background-color: #fff;
+        text-align: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .section-title {
+        font-size: 42px;
+        font-weight: 700;
+        color: #2d4b8e;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .blue-divider {
+        width: 120px;
+        height: 4px;
+        background-color: #0099cc;
+        margin: 0 auto 50px;
+        display: block;
+    }
+    
+    .sponsors-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .sponsor-logo {
+        width: 160px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    
+    .sponsor-logo img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        transition: all 0.3s ease;
+    }
+    
+    .sponsor-logo:hover img {
+        transform: scale(1.05);
+    }
+    
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 32px;
+        }
+        
+        .sponsors-container {
+            gap: 20px;
+        }
+        
+        .sponsor-logo {
+            width: 120px;
+            height: 80px;
+        }
+    }
+</style>
+<section class="partenaires-section">
+        <h2 class="section-title">PARTENAIRES MÉDIAS</h2>
+        <span class="blue-divider"></span>
+        
+        <div class="partners-container">
+            <!-- Partenaire 1 -->
+            <div class="partner-logo">
+                <img src="img/p1.png" alt="Logo Samira">
+            </div>
+            
+            <!-- Partenaire 2 -->
+            <div class="partner-logo">
+                <img src="img/p2.png" alt="Logo El Bilad">
+            </div>
+            
+            <!-- Partenaire 3 -->
+            <div class="partner-logo">
+                <img src="img/p3.png" alt="Logo El Iqtisadia">
+            </div>
+            
+            <!-- Partenaire 4 -->
+            <div class="partner-logo">
+                <img src="img/p4.png" alt="Logo La Watania">
+            </div>
+            
+            <!-- Partenaire 5 -->
+            <div class="partner-logo">
+                <img src="img/p5.png" alt="Logo El Hayat TV">
+            </div>
+            
+            <!-- Partenaire 6 -->
+            <div class="partner-logo">
+                <img src="img/p6.png" alt="Logo Echorouk News">
+            </div>
+            
+            <!-- Partenaire 7 -->
+            <div class="partner-logo">
+                <img src="img/p7.png" alt="Logo ANEP">
+            </div>
+            
+            <!-- Partenaire 8 -->
+            <div class="partner-logo">
+                <img src="img/p8.png" alt="Logo Média 8">
+            </div>
+            
+            <!-- Partenaire 9 -->
+            <div class="partner-logo">
+                <img src="img/p9.png" alt="Logo Média 9">
+            </div>
+        </div>
+        
+     
+    </section>
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
