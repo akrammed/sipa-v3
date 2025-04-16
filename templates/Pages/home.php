@@ -49,7 +49,95 @@
 
 .gallery-item img:hover {
     transform: scale(1.05);
+  }
+
+/* General Styles */
+.sponsor-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
+
+.section-title {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    color: #007bff;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.section-title p {
+    color: #6c757d;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.sponsors-section,
+.media-partners-section {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+.sponsor-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.sponsor-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.sponsor-logo {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+ 
+}
+
+.sponsor-logos {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sponsor-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.major-sponsor {
+    margin-bottom: 30px;
+}
+
+.major-logo {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .sponsor-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .sponsor-logo {
+        max-width: 100%;
+    }
+}
+
  </style>
     <!-- Hero Section -->
     <section id="hero" class="hero section light-background">
@@ -429,6 +517,112 @@
     </div>
 
 </section><!-- /Gallery Section -->
+
+
+<!-- 
+<section id="nos-sponsors" class="nos sponsors">
+
+ Section Title 
+<div class="container section-title" data-aos="fade-up">
+    <h2>nos sponsors </h2>
+    <p>Découvrez nos sponsors</p>
+</div>< End Section Title
+
+</section> -->
+
+
+
+<!-- Sponsors Section -->
+<!-- Section Title -->
+<div class="sponsor-container section-title" data-aos="fade-up">
+    <h2>Nos Sponsors</h2>
+    <p>Découvrez nos sponsors</p>
+</div>
+
+<!-- Sponsors Section -->
+<section class="sponsors-section">
+    <div class="sponsor-container">
+        <!-- Major Sponsor -->
+        <div class="major-sponsor text-center mb-5">
+            <img src="img/s1.png" alt="Sponsor Majeur" class="sponsor-logo major-logo">
+        </div>
+
+        <!-- Grid of Sponsors -->
+        <div class="sponsor-grid">
+            <!-- Row 1 -->
+            <div class="sponsor-row">
+                <img src="img/s2.jpg" alt="Sponsor 2" class="sponsor-logo">
+                <img src="img/s3.png" alt="Sponsor 3" class="sponsor-logo">
+                <img src="img/s4.png" alt="Sponsor 4" class="sponsor-logo">
+                <img src="img/s5.png" alt="Sponsor 5" class="sponsor-logo">
+                <img src="img/s6.jpg" alt="Sponsor 6" class="sponsor-logo">
+                <img src="img/s7.png" alt="Sponsor 7" class="sponsor-logo">
+            </div>
+
+            <!-- Row 2 -->
+            <div class="sponsor-row">
+                <img src="img/s8.jpeg" alt="Sponsor 8" class="sponsor-logo">
+                <img src="img/s9.jpg" alt="Sponsor 9" class="sponsor-logo">
+                <img src="img/s10.jpg" alt="Sponsor 10" class="sponsor-logo">
+                <img src="img/s11.jpg" alt="Sponsor 11" class="sponsor-logo">
+                <img src="img/s12.png" alt="Sponsor 12" class="sponsor-logo">
+                <img src="img/s13.png" alt="Sponsor 13" class="sponsor-logo">
+            </div>
+
+            <!-- Row 3 -->
+            <div class="sponsor-row">
+                <img src="img/s14.png" alt="Sponsor 14" class="sponsor-logo">
+                <img src="img/s15.png" alt="Sponsor 15" class="sponsor-logo">
+                <img src="img/s16.png" alt="Sponsor 16" class="sponsor-logo">
+                <img src="img/s17.png" alt="Sponsor 17" class="sponsor-logo">
+                <img src="img/s19.png" alt="Sponsor 19" class="sponsor-logo">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Media Partners Section -->
+<section class="media-partners-section">
+    <div class="sponsor-container">
+    <div class="sponsor-container section-title" data-aos="fade-up">
+    <h2>partenaires médias</h2>
+    <p>Découvrez nos partenaires médias</p>
+</div>
+        <div class="row justify-content-center">
+            <!-- Manually add each media partner logo -->
+            <div class="col-md-2 col-sm-4 mb-4">
+                <img src="img/p1.png" alt="Partenaire Média 1" class="sponsor-logo">
+            </div>
+            <div class="col-md-2 col-sm-4 mb-4">
+                <img src="img/p2.png" alt="Partenaire Média 2" class="sponsor-logo">
+            </div>
+            <div class="col-md-2 col-sm-4 mb-4">
+                <img src="img/p3.png" alt="Partenaire Média 3" class="sponsor-logo">
+            </div>
+            <div class="col-md-2 col-sm-4 mb-4">
+                <img src="img/p4.png" alt="Partenaire Média 3" class="sponsor-logo">
+            </div>
+            <div class="col-md-2 col-sm-4 mb-4">
+                <img src="img/p5.png" alt="Partenaire Média 3" class="sponsor-logo">
+            </div>
+            <div class="col-md-2 col-sm-4 mb-4">
+                <img src="img/p6.png" alt="Partenaire Média 3" class="sponsor-logo">
+            </div>
+            <div class="col-md-2 col-sm-4 mb-4">
+                <img src="img/p7.png" alt="Partenaire Média 3" class="sponsor-logo">
+            </div>
+            <div class="col-md-2 col-sm-4 mb-4">
+                <img src="img/p8.png" alt="Partenaire Média 3" class="sponsor-logo">
+            </div>
+            <div class="col-md-2 col-sm-4 mb-4">
+                <img src="img/p9.png" alt="Partenaire Média 3" class="sponsor-logo">
+            </div>
+            <!-- Add more media partners as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Plan du Salon Button -->
 
 
     <!-- Contact Section -->

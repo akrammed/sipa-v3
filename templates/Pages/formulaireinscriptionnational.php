@@ -218,6 +218,7 @@ function toggleOtherSector(select) {
                 </div>
             </div>
 
+            <h4 data-aos="fade-right" class="mt-5">Réservation de Stand</h4>
             <!-- Electricité par jour -->
             <div class="floating-label mb-4">
                 <select class="form-select" id="electricity" name="electricity" required>
