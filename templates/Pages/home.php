@@ -160,7 +160,7 @@
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
               <h2 class="text-black">SIPA 2025</h2>
-              <p class="text-black">Salon International de la Pêche et de l'Aquaculture</p>
+              <p  class="">Salon International de la Pêche et de l'Aquaculture</p>
               <p style="text-align: justify;">
                 La 10ᵉ édition du Salon International de la Pêche et de l’Aquaculture se tiendra à Oran du 6 au 9
                 novembre 2025.
@@ -355,7 +355,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Espaces & Opportunités</h2>
-        <p>Un salon pour l’échange, l'information et l’investissement dans l’aquaculture et la pêche.</p>
+        <p style="font-size:px;">Un salon pour l’échange, l'information et l’investissement dans l’aquaculture et la pêche.</p>
       </div><!-- End Section Title -->
 
       <div class="container">

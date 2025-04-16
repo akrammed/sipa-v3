@@ -179,6 +179,8 @@
     </div>
 
     <!-- Réservation de Stand -->
+
+    <h4 data-aos="fade-right" class="mt-5">Réservation de Stand</h4>
     <div class="form-group">
   <label for="stand_type">Type de Stand</label>
   <select class="form-select" id="stand_type" name="stand_type" required>
@@ -238,10 +240,7 @@
                 <label for="electricity">Électricité (par jour)</label>
             </div>
         <div class="row g-4">
-            <div class="col-md-6 floating-label">
-                <input type="number" class="form-control" id="area" name="area" placeholder="Surface en m²" required>
-                <label for="area">Superficie demandée (m²)</label>
-            </div>
+           
             <div class="col-md-6 floating-label">
                 <select class="form-select" id="facades" name="facades" required>
                     <option value=""></option>
