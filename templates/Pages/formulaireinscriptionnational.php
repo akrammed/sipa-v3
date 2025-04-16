@@ -95,8 +95,8 @@
 <!-- Main Form -->
 <main class="container mb-5">
     <div class="form-container" data-aos="fade-up">
-    <form method="POST" action="/emails/services">
-    <input type="hidden" name="_csrfToken" value="<?php echo $this->request->getAttribute('csrfToken'); ?>">
+        <form method="POST" action="/emails/services">
+            <input type="hidden" name="_csrfToken" value="<?php echo $this->request->getAttribute('csrfToken'); ?>">
             <!-- Informations sur l'entreprise -->
             <h4 data-aos="fade-right" class="mb-4">Informations sur l'entreprise</h4>
             <div class="row g-4" data-aos="fade-up">
@@ -105,72 +105,72 @@
                     <label for="company_name">Raison Sociale</label>
                 </div>
                 <div class="col-md-6 floating-label">
-    <label for="activity_sector">Secteur d'activité</label>
-    <select class="form-control" id="activity_sector" name="activity_sector" required onchange="toggleOtherSector(this)">
-        <optgroup label="Pêche">
-            <option value="Pêche artisanale">Pêche artisanale</option>
-            <option value="Pêche côtière">Pêche côtière</option>
-            <option value="Pêche industrielle">Pêche industrielle</option>
-            <option value="Pêche au corail">Pêche au corail</option>
-            <option value="Pêche continentale">Pêche continentale</option>
-            <option value="Pêche récréative">Pêche récréative</option>
-            <option value="Pêche au thon rouge">Pêche au thon rouge</option>
-        </optgroup>
+                    <label for="activity_sector">Secteur d'activité</label>
+                    <select class="form-control" id="activity_sector" name="activity_sector" required onchange="toggleOtherSector(this)">
+                        <optgroup label="Pêche">
+                            <option value="Pêche artisanale">Pêche artisanale</option>
+                            <option value="Pêche côtière">Pêche côtière</option>
+                            <option value="Pêche industrielle">Pêche industrielle</option>
+                            <option value="Pêche au corail">Pêche au corail</option>
+                            <option value="Pêche continentale">Pêche continentale</option>
+                            <option value="Pêche récréative">Pêche récréative</option>
+                            <option value="Pêche au thon rouge">Pêche au thon rouge</option>
+                        </optgroup>
 
-        <optgroup label="Aquaculture">
-            <option value="Aquaculture marine">Aquaculture marine</option>
-            <option value="Aquaculture continentale">Aquaculture continentale</option>
-            <option value="Pisciculture intégrée">Pisciculture intégrée</option>
-        </optgroup>
+                        <optgroup label="Aquaculture">
+                            <option value="Aquaculture marine">Aquaculture marine</option>
+                            <option value="Aquaculture continentale">Aquaculture continentale</option>
+                            <option value="Pisciculture intégrée">Pisciculture intégrée</option>
+                        </optgroup>
 
-        <optgroup label="Autres secteurs">
-            <option value="Aliments pour poissons">Aliments pour poissons</option>
-            <option value="Génétique et reproduction">Génétique et reproduction</option>
-            <option value="Écloseries">Écloseries</option>
-            <option value="Fabrication de cages flottantes">Fabrication de cages flottantes</option>
-            <option value="Fabrication de filets de pêche">Fabrication de filets de pêche</option>
-            <option value="Équipements pour élevage de poissons">Équipements pour élevage de poissons</option>
-            <option value="Équipements pour la pêche professionnelle">Équipements pour la pêche professionnelle</option>
-            <option value="Appareils de pêche et navires">Appareils de pêche et navires</option>
-            <option value="Construction navale">Construction navale</option>
-            <option value="Équipements portuaires">Équipements portuaires</option>
-            <option value="Hygiène et santé des poissons">Hygiène et santé des poissons</option>
-            <option value="Transformation des produits halieutiques">Transformation des produits halieutiques</option>
-            <option value="Biotechnologies marines">Biotechnologies marines</option>
-            <option value="Énergies renouvelables">Énergies renouvelables</option>
-            <option value="Consultance">Consultance</option>
-            <option value="Commerce et distribution">Commerce et distribution</option>
-            <option value="Logistique">Logistique</option>
-            <option value="Écotourisme et pêche récréative">Écotourisme et pêche récréative</option>
-            <option value="Finance et investissements">Finance et investissements</option>
-            <option value="Bateaux de plaisance">Bateaux de plaisance</option>
-            <option value="Centres de recherche">Centres de recherche</option>
-            <option value="Plongée sous-marine">Plongée sous-marine</option>
-            <option value="Assurance">Assurance</option>
-            <option value="Banque">Banque</option>
-            <option value="Coopérative">Coopérative</option>
-            <option value="Association">Association</option>
-            <option value="Autre">Autre</option>
-        </optgroup>
-    </select>
+                        <optgroup label="Autres secteurs">
+                            <option value="Aliments pour poissons">Aliments pour poissons</option>
+                            <option value="Génétique et reproduction">Génétique et reproduction</option>
+                            <option value="Écloseries">Écloseries</option>
+                            <option value="Fabrication de cages flottantes">Fabrication de cages flottantes</option>
+                            <option value="Fabrication de filets de pêche">Fabrication de filets de pêche</option>
+                            <option value="Équipements pour élevage de poissons">Équipements pour élevage de poissons</option>
+                            <option value="Équipements pour la pêche professionnelle">Équipements pour la pêche professionnelle</option>
+                            <option value="Appareils de pêche et navires">Appareils de pêche et navires</option>
+                            <option value="Construction navale">Construction navale</option>
+                            <option value="Équipements portuaires">Équipements portuaires</option>
+                            <option value="Hygiène et santé des poissons">Hygiène et santé des poissons</option>
+                            <option value="Transformation des produits halieutiques">Transformation des produits halieutiques</option>
+                            <option value="Biotechnologies marines">Biotechnologies marines</option>
+                            <option value="Énergies renouvelables">Énergies renouvelables</option>
+                            <option value="Consultance">Consultance</option>
+                            <option value="Commerce et distribution">Commerce et distribution</option>
+                            <option value="Logistique">Logistique</option>
+                            <option value="Écotourisme et pêche récréative">Écotourisme et pêche récréative</option>
+                            <option value="Finance et investissements">Finance et investissements</option>
+                            <option value="Bateaux de plaisance">Bateaux de plaisance</option>
+                            <option value="Centres de recherche">Centres de recherche</option>
+                            <option value="Plongée sous-marine">Plongée sous-marine</option>
+                            <option value="Assurance">Assurance</option>
+                            <option value="Banque">Banque</option>
+                            <option value="Coopérative">Coopérative</option>
+                            <option value="Association">Association</option>
+                            <option value="Autre">Autre</option>
+                        </optgroup>
+                    </select>
 
-    <!-- Hidden text input for "Autre" -->
-    <input type="text" class="form-control mt-2" id="other_activity_sector" name="other_activity_sector" placeholder="Précisez votre secteur" style="display:none;">
-</div>
+                    <!-- Hidden text input for "Autre" -->
+                    <input type="text" class="form-control mt-2" id="other_activity_sector" name="other_activity_sector" placeholder="Précisez votre secteur" style="display:none;">
+                </div>
 
 
-<script>
-function toggleOtherSector(select) {
-    const otherInput = document.getElementById('other_activity_sector');
-    if (select.value === "Autre") {
-        otherInput.style.display = "block";
-        otherInput.required = true;
-    } else {
-        otherInput.style.display = "none";
-        otherInput.required = false;
-    }
-}
-</script>
+                <script>
+                    function toggleOtherSector(select) {
+                        const otherInput = document.getElementById('other_activity_sector');
+                        if (select.value === "Autre") {
+                            otherInput.style.display = "block";
+                            otherInput.required = true;
+                        } else {
+                            otherInput.style.display = "none";
+                            otherInput.required = false;
+                        }
+                    }
+                </script>
 
                 <div class="col-md-6 floating-label">
                     <input type="text" class="form-control" id="registry_number" name="registry_number" required>
@@ -220,79 +220,54 @@ function toggleOtherSector(select) {
 
             <h4 data-aos="fade-right" class="mt-5">Réservation de Stand</h4>
 
-            <!-- Electricité par jour -->
-            <div class="floating-label mb-4">
-                <select class="form-select" id="electricity" name="electricity" required>
-                    <option value="">Électricité (par jour)</option>
-                    <option value="12">12 m² - 720 DA</option>
-                    <option value="15">15 m² - 900 DA</option>
-                    <option value="18">18 m² - 1080 DA</option>
-                    <option value="21">21 m² - 1260 DA</option>
-                    <option value="24">24 m² - 1440 DA</option>
-                    <option value="27">27 m² - 1620 DA</option>
-                    <option value="36">36 m² - 2160 DA</option>
-                    <option value="48">48 m² - 2890 DA</option>
-                    <option value="54">54 m² - 3240 DA</option>
-                    <option value="60">60 m² - 3600 DA</option>
-                </select>
-                <label for="electricity">Électricité (par jour)</label>
-            </div>
+
 
             <div class="row g-4 mb-3">
-            <div class="form-group">
-  <label><strong>Choix du Stand et Superficie Commandée</strong></label><br>
-  
-  <label><input type="radio" name="standType" value="17000" required> Stand aménagé (17.000 DA/m²)</label><br>
-  <label><input type="radio" name="standType" value="12000"> Stand non aménagé (12.000 DA/m²)</label><br>
-  <label><input type="radio" name="standType" value="10000"> Emplacement découvert (10.000 DA/m²)</label>
-</div>
+                <div class="form-group">
+                    <label><strong>Choix du Stand et Superficie Commandée</strong></label><br>
 
-<div id="surfaceSelectContainer" class="form-group" style="display:none;">
-  <label for="surfaceSelect">Superficie demandée (m²)</label>
-  <select id="surfaceSelect" class="form-control" name="area" required>
-    <option value="">-- Choisir une superficie --</option>
-    <option value="12">12 m²</option>
-    <option value="15">15 m²</option>
-    <option value="18">18 m²</option>
-    <option value="21">21 m²</option>
-    <option value="24">24 m²</option>
-    <option value="27">27 m²</option>
-    <option value="36">36 m²</option>
-    <option value="48">48 m²</option>
-    <option value="54">54 m²</option>
-    <option value="60">60 m²</option>
-  </select>
-</div>
+                    <label><input type="radio" name="standType" value="17000" required> Stand aménagé (17.000 DA/m²)</label><br>
+                    <label><input type="radio" name="standType" value="12000"> Stand non aménagé (12.000 DA/m²)</label><br>
+                    <label><input type="radio" name="standType" value="10000"> Emplacement découvert (10.000 DA/m²)</label>
+                </div>
 
-<div id="totalPrice" style="margin-top:10px;font-weight:bold;"></div>
 
-<script>
-  const standRadios = document.querySelectorAll('input[name="standType"]');
-  const surfaceSelectContainer = document.getElementById("surfaceSelectContainer");
-  const surfaceSelect = document.getElementById("surfaceSelect");
-  const totalPriceDiv = document.getElementById("totalPrice");
+                <div id="surfaceSelectContainer" class="form-group" style="display:none;">
+                    <label for="surfaceSelect">Superficie demandée (m²)</label>
+                    <select id="surfaceSelect" class="form-control" name="area" required>
+                        <option value="">-- Choisir une superficie --</option>
+                        <option value="12">12 m²</option>
+                        <option value="15">15 m²</option>
+                        <option value="18">18 m²</option>
+                        <option value="21">21 m²</option>
+                        <option value="24">24 m²</option>
+                        <option value="27">27 m²</option>
+                        <option value="36">36 m²</option>
+                        <option value="48">48 m²</option>
+                        <option value="54">54 m²</option>
+                        <option value="60">60 m²</option>
+                    </select>
+                </div>
 
-  let selectedPrice = 0;
+                <div id="totalPrice" style="margin-top:10px;font-weight:bold;"></div>
 
-  standRadios.forEach(radio => {
-    radio.addEventListener("change", function () {
-      selectedPrice = parseInt(this.value);
-      surfaceSelectContainer.style.display = "block";
-      totalPriceDiv.innerHTML = ""; // Reset total
-    });
-  });
-
-  surfaceSelect.addEventListener("change", function () {
-    const surface = parseInt(this.value);
-    if (surface && selectedPrice) {
-      const total = surface * selectedPrice;
-      totalPriceDiv.innerHTML = `💰 Prix total : <strong>${total.toLocaleString()} DA</strong>`;
-    } else {
-      totalPriceDiv.innerHTML = "";
-    }
-  });
-</script>
-
+                <!-- Electricité par jour -->
+                <div class="floating-label mb-4">
+                    <select class="form-select" id="electricity" name="electricity" required>
+                        <option value="">Électricité (par jour)</option>
+                        <option value="12">12 m² - 720 DA</option>
+                        <option value="15">15 m² - 900 DA</option>
+                        <option value="18">18 m² - 1080 DA</option>
+                        <option value="21">21 m² - 1260 DA</option>
+                        <option value="24">24 m² - 1440 DA</option>
+                        <option value="27">27 m² - 1620 DA</option>
+                        <option value="36">36 m² - 2160 DA</option>
+                        <option value="48">48 m² - 2890 DA</option>
+                        <option value="54">54 m² - 3240 DA</option>
+                        <option value="60">60 m² - 3600 DA</option>
+                    </select>
+                    <label for="electricity">Électricité (par jour)</label>
+                </div>
                 <div class="col-md-6 floating-label">
                     <select class="form-select" id="facades" name="facades" required>
                         <option value="0">Sans supplément</option>
@@ -305,127 +280,195 @@ function toggleOtherSector(select) {
                 </div>
             </div>
 
+            <script>
+                const standRadios = document.querySelectorAll('input[name="standType"]');
+                const surfaceSelectContainer = document.getElementById("surfaceSelectContainer");
+                const surfaceSelect = document.getElementById("surfaceSelect");
+                const electricitySelect = document.getElementById("electricity");
+                const totalPriceDiv = document.getElementById("totalPrice");
+
+                let selectedPrice = 0;
+
+                standRadios.forEach(radio => {
+                    radio.addEventListener("change", function() {
+                        selectedPrice = parseInt(this.value);
+                        surfaceSelectContainer.style.display = "block";
+                        totalPriceDiv.innerHTML = ""; // Reset total
+                    });
+                });
+
+                surfaceSelect.addEventListener("change", function() {
+                    const surface = parseInt(this.value);
+                    if (surface && selectedPrice) {
+                        const total = surface * selectedPrice;
+                        totalPriceDiv.innerHTML = `💰 Prix total : <strong>${total.toLocaleString()} DA</strong>`;
+
+                        // Sélectionner automatiquement l'option d'électricité correspondante
+                        for (let i = 0; i < electricitySelect.options.length; i++) {
+                            if (electricitySelect.options[i].value == surface.toString()) {
+                                electricitySelect.selectedIndex = i;
+                                break;
+                            }
+                        }
+                    } else {
+                        totalPriceDiv.innerHTML = "";
+                    }
+                });
+            </script>
             <!-- Checkbox Électricité Obligatoire -->
             <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" id="electricity_required" name="electricity_required" value="1" required>
+                <input class="form-check-input" type="checkbox" id="electricity_required" name="electricity_required" value="1" checked disabled>
                 <label class="form-check-label" for="electricity_required">
                     Électricité obligatoire (20,000 DA)
                     <span class="price-tag">20,000 DA</span>
                 </label>
             </div>
+
+    </div>
+    <h4 data-aos="fade-right" class="mt-5 mb-4">Publicité sur le Catalogue</h4>
+    <div data-aos="fade-up" class="mb-3">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="pub1" name="publicite" value="4e">
+            <label class="form-check-label" for="pub1">
+                4ème page de couverture
+                <span class="price-tag">120.000 DA</span>
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="pub2" name="publicite" value="3e">
+            <label class="form-check-label" for="pub2">
+                3ème page de couverture
+                <span class="price-tag">100.000 DA</span>
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="pub3" name="publicite" value="2e">
+            <label class="form-check-label" for="pub3">
+                2ème page de couverture
+                <span class="price-tag">80.000 DA</span>
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="pub4" name="publicite" value="demi">
+            <label class="form-check-label" for="pub4">
+                1/2 page intérieure couleur
+                <span class="price-tag">30.000 DA</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- Services supplémentaires -->
+    <h4 data-aos="fade-right" class="mt-5 mb-4">Services supplémentaires</h4>
+    <div data-aos="fade-up" class="mb-3">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="service1" name="service1" value="1">
+            <label class="form-check-label" for="service1">
+                Table supplémentaire
+                <span class="price-tag">4.200 DA</span>
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="service2" name="service2" value="1">
+            <label class="form-check-label" for="service2">
+                Chaise supplémentaire
+                <span class="price-tag">1.800 DA</span>
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="service3" name="service3" value="1">
+            <label class="form-check-label" for="service3">
+                Hôtesse d'accueil (par jour)
+                <span class="price-tag">4.200 DA</span>
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="service4" name="service4" value="1">
+            <label class="form-check-label" for="service4">
+                Traducteur (par jour)
+                <span class="price-tag">12.000 DA</span>
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="service5" name="service5" value="1">
+            <label class="form-check-label" for="service5">
+                Comptoir d'accueil (par jour)
+                <span class="price-tag">5.000 DA</span>
+            </label>
+        </div>
+    </div>
+
+    <h4 data-aos="fade-right" class="mt-5 mb-4">Signalétique du Stand</h4>
+    <div data-aos="fade-up" class="mb-3">
+        <div class="floating-label">
+            <input type="text" class="form-control" id="stand_name" name="stand_name" maxlength="20" required>
+            <label for="stand_name">Nom sur l'enseigne (max 20 caractères)</label>
+        </div>
+    </div>
+
+    <!-- Confirmation Badges et Macarons -->
+    <h4 data-aos="fade-right" class="mt-5 mb-4">Confirmation</h4>
+    <div class="row g-4" data-aos="fade-up">
+        <div class="col-md-6 floating-label">
+            <input type="text" class="form-control" id="company_name_confirmation" name="company_name_confirmation" required>
+            <label for="company_name_confirmation">Nom de la société</label>
+        </div>
+        <div class="col-md-6 floating-label">
+            <select class="form-control" id="badges_select" name="badges_option" required>
+                <option value="">-- Sélectionner le nombre de badges --</option>
+                <option value="1">1 badge</option>
+                <option value="2">2 badges</option>
+                <option value="4">4 badges</option>
+                <option value="6">6 badges</option>
+                <option value="8">8 badges</option>
+                <option value="10">10 badges</option>
+                <option value="autre">Autre quantité</option>
+            </select>
+            <label for="badges_select">Nombre de badges exposants</label>
         </div>
 
-        <h4 data-aos="fade-right" class="mt-5 mb-4">Publicité sur le Catalogue</h4>
-        <div data-aos="fade-up" class="mb-3">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="pub1" name="pub1" value="1">
-                <label class="form-check-label" for="pub1">
-                    4ème page de couverture
-                    <span class="price-tag">120.000 DA</span>
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="pub2" name="pub2" value="1">
-                <label class="form-check-label" for="pub2">
-                    3ème page de couverture
-                    <span class="price-tag">100.000 DA</span>
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="pub3" name="pub3" value="1">
-                <label class="form-check-label" for="pub3">
-                    2ème page de couverture
-                    <span class="price-tag">80.000 DA</span>
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="pub4" name="pub4" value="1">
-                <label class="form-check-label" for="pub4">
-                    1/2 page intérieure couleur
-                    <span class="price-tag">30.000 DA</span>
-                </label>
-            </div>  
+        <div class="col-md-6 floating-label" id="custom_badges_container" style="display: none;">
+            <input type="number" class="form-control" id="badges_count" name="badges_count" min="1" required>
+            <label for="badges_count">Précisez le nombre de badges</label>
         </div>
 
-        <!-- Services supplémentaires -->
-        <h4 data-aos="fade-right" class="mt-5 mb-4">Services supplémentaires</h4>
-        <div data-aos="fade-up" class="mb-3">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="service1" name="service1" value="1">
-                <label class="form-check-label" for="service1">
-                    Table supplémentaire
-                    <span class="price-tag">4.200 DA</span>
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="service2" name="service2" value="1">
-                <label class="form-check-label" for="service2">
-                    Chaise supplémentaire
-                    <span class="price-tag">1.800 DA</span>
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="service3" name="service3" value="1">
-                <label class="form-check-label" for="service3">
-                    Hôtesse d'accueil (par jour)
-                    <span class="price-tag">4.200 DA</span>
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="service4" name="service4" value="1">
-                <label class="form-check-label" for="service4">
-                    Traducteur (par jour)
-                    <span class="price-tag">12.000 DA</span>
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="service5" name="service5" value="1">
-                <label class="form-check-label" for="service5">
-                    Comptoir d'accueil (par jour)
-                    <span class="price-tag">5.000 DA</span>
-                </label>
-            </div>
-        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const badgesSelect = document.getElementById('badges_select');
+                const customBadgesContainer = document.getElementById('custom_badges_container');
+                const badgesCountInput = document.getElementById('badges_count');
 
-        <h4 data-aos="fade-right" class="mt-5 mb-4">Signalétique du Stand</h4>
-        <div data-aos="fade-up" class="mb-3">
-            <div class="floating-label">
-                <input type="text" class="form-control" id="stand_name" name="stand_name" maxlength="20" required>
-                <label for="stand_name">Nom sur l'enseigne (max 20 caractères)</label>
-            </div>
+                badgesSelect.addEventListener('change', function() {
+                    if (this.value === 'autre') {
+                        customBadgesContainer.style.display = 'block';
+                        badgesCountInput.required = true;
+                    } else {
+                        customBadgesContainer.style.display = 'none';
+                        badgesCountInput.required = false;
+                        badgesCountInput.value = '';
+                    }
+                });
+            });
+        </script>
+        <div class="col-md-6 floating-label">
+            <select class="form-select" id="macarons" name="macarons" required>
+                <option value="1">2 badge = 1 macaron</option>
+                <option value="2">4 badges = 2 macarons</option>
+                <option value="3">6 badges = 3 macarons</option>
+                <option value="3">10 badges = 3 macarons</option>
+            </select>
+            <label for="macarons">Macarons</label>
         </div>
+        <div class="col-md-12 floating-label">
+            <textarea class="form-control" id="specific_request" name="specific_request" rows="3" placeholder="Demande spécifique"></textarea>
+            <label for="specific_request">Demande spécifique</label>
+        </div>
+    </div>
 
-        <!-- Confirmation Badges et Macarons -->
-        <h4 data-aos="fade-right" class="mt-5 mb-4">Confirmation</h4>
-        <div class="row g-4" data-aos="fade-up">
-            <div class="col-md-6 floating-label">
-                <input type="text" class="form-control" id="company_name_confirmation" name="company_name_confirmation" required>
-                <label for="company_name_confirmation">Nom de la société</label>
-            </div>
-            <div class="col-md-6 floating-label">
-                <input type="number" class="form-control" id="badges_count" name="badges_count" min="1" required>
-                <label for="badges_count">Nombre de badges exposants</label>
-            </div>
-            <div class="col-md-6 floating-label">
-                <select class="form-select" id="macarons" name="macarons" required>
-                    <option value="1">2 badge = 1 macaron</option>
-                    <option value="2">4 badges = 2 macarons</option>
-                    <option value="3">6 badges = 3 macarons</option>
-                    <option value="3">10 badges = 3 macarons</option>
-                </select>
-                <label for="macarons">Macarons</label>
-            </div>
-            <div class="col-md-12 floating-label">
-                <textarea class="form-control" id="specific_request" name="specific_request" rows="3" placeholder="Demande spécifique"></textarea>
-                <label for="specific_request">Demande spécifique</label>
-            </div>
-        </div>
-
-        <div class="text-center mt-5" data-aos="zoom-in">
-            <button type="submit" class="btn btn-outline-primary btn-lg px-5 py-3">
-                <i class="fas fa-paper-plane me-2"></i>Soumettre
-            </button>
-        </div>
-        </form>
+    <div class="text-center mt-5" data-aos="zoom-in">
+        <button type="submit" class="btn btn-outline-primary btn-lg px-5 py-3">
+            <i class="fas fa-paper-plane me-2"></i>Soumettre
+        </button>
+    </div>
+    </form>
     </div>
 </main>
