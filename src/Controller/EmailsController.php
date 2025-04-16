@@ -39,7 +39,7 @@ class EmailsController extends AppController
                     ->deliver($this->buildParticipationEmail($data, true));
             }
             
-
+            $this->Flash->success('Votre demande a été envoyée avec succès.');
             return $this->redirect('/confirmation');
         }
     }
@@ -69,7 +69,7 @@ class EmailsController extends AppController
                     ->deliver($this->buildVisitorEmail($data, true));
             }
 
-
+            $this->Flash->success('Votre demande a été envoyée avec succès.');
             return $this->redirect('/confirmation');
         }
     }
@@ -84,7 +84,7 @@ class EmailsController extends AppController
             $mailer = new Mailer('default');
             $mailer
                 ->setFrom(['noreply@sipa2025.com' => 'SIPA 2025 Formulaire'])
-                ->setTo('organisation@sipa2025.com') // Change to the organization's email
+                ->setTo('test@catalyst-dz.com') // Change to the organization's email
                 ->setEmailFormat('html')
                 ->setSubject('Nouvelle demande de services supplémentaires - SIPA 2025')
                 ->deliver($this->buildServicesEmail($data));
@@ -93,14 +93,14 @@ class EmailsController extends AppController
             if (!empty($data['email'])) {
                 $clientMailer = new Mailer('default');
                 $clientMailer
-                    ->setFrom(['noreply@sipa2025.com' => 'SIPA 2025'])
+                    ->setFrom(['test@catalyst-dz.com' => 'SIPA 2025'])
                     ->setTo($data['email'])
                     ->setEmailFormat('html')
                     ->setSubject('Confirmation de votre demande de services - SIPA 2025')
                     ->deliver($this->buildServicesEmail($data, true));
             }
             
-
+            $this->Flash->success('Votre demande a été envoyée avec succès.');
             return $this->redirect('/confirmation');
         }
     }
@@ -130,11 +130,9 @@ class EmailsController extends AppController
                 
             // Add attachment if passport scan was provided
             if ($passportFile) {
-                $mailer->setAttachments([
-                    $passportFile->getClientFilename() => [
-                        'file' => $passportFile->getStream()->getMetadata('uri'),
-                        'mimetype' => $passportFile->getClientMediaType(),
-                    ],
+                $mailer->addAttachment($passportFile->getClientFilename(), [
+                    'file' => $passportFile->getStream()->getMetadata('uri'),
+                    'mimetype' => $passportFile->getClientMediaType()
                 ]);
             }
             
@@ -149,7 +147,7 @@ class EmailsController extends AppController
                     ->deliver($this->buildVisaEmail($data, true));
             }
             
-
+            $this->Flash->success('Votre demande de visa a été envoyée avec succès.');
             return $this->redirect('/confirmation');
         }
     }

@@ -179,17 +179,64 @@
     </div>
 
     <!-- Réservation de Stand -->
-    <h4 data-aos="fade-right" class="mt-5">Réservation de Stand</h4>
-    <div data-aos="fade-up">
-        <div class="floating-label mb-4">
-            <select class="form-select" id="stand_type" name="stand_type" required>
-                <option value=""></option>
-                <option value="amenage">Stand aménagé - 250 €/m²</option>
-                <option value="non_amenage">Stand non aménagé - 200 €/m²</option>
-                <option value="decouvert">Emplacement découvert - 150 €/m²</option>
-            </select>
-            <label for="stand_type">Type de Stand</label>
-        </div>
+    <div class="form-group">
+  <label for="stand_type">Type de Stand</label>
+  <select class="form-select" id="stand_type" name="stand_type" required>
+    <option value=""></option>
+    <option value="amenage">Stand aménagé - 250 €/m²</option>
+    <option value="non_amenage">Stand non aménagé - 200 €/m²</option>
+    <option value="decouvert">Emplacement découvert - 150 €/m²</option>
+  </select>
+</div>
+
+<!-- Surface Select -->
+<div id="surfaceSelectContainer" class="form-group" style="display:none;">
+  <label for="surfaceSelect">Superficie demandée (m²)</label>
+  <select id="surfaceSelect" class="form-control" name="area" required>
+    <option value="">-- Choisir une superficie --</option>
+    <option value="12">12 m²</option>
+    <option value="15">15 m²</option>
+    <option value="18">18 m²</option>
+    <option value="21">21 m²</option>
+    <option value="24">24 m²</option>
+    <option value="27">27 m²</option>
+    <option value="36">36 m²</option>
+    <option value="48">48 m²</option>
+    <option value="54">54 m²</option>
+    <option value="60">60 m²</option>
+  </select>
+</div>
+
+<!-- Script -->
+<script>
+  document.getElementById('stand_type').addEventListener('change', function () {
+    const selectedValue = this.value;
+    const surfaceContainer = document.getElementById('surfaceSelectContainer');
+
+    if (selectedValue) {
+      surfaceContainer.style.display = 'block';
+    } else {
+      surfaceContainer.style.display = 'none';
+    }
+  });
+</script>
+
+        <div style="margin-top :30px" class="floating-label mb-4">
+                <select class="form-select" id="electricity" name="electricity" required>
+                    <option value="">Électricité </option>
+                    <option value="12">12 m² - 60 £</option>
+                    <option value="15">15 m² - 75 £</option>
+                    <option value="18">18 m² - 90 £</option>
+                    <option value="21">21 m² - 105 £</option>
+                    <option value="24">24 m² - 130 £</option>
+                    <option value="27">27 m² - 145 £</option>
+                    <option value="36">36 m² - 180 £</option>
+                    <option value="48">48 m² - 240 £</option>
+                    <option value="54">54 m² - 270 £</option>
+                    <option value="60">60 m² - 300 £</option>
+                </select>
+                <label for="electricity">Électricité (par jour)</label>
+            </div>
         <div class="row g-4">
             <div class="col-md-6 floating-label">
                 <input type="number" class="form-control" id="area" name="area" placeholder="Surface en m²" required>
@@ -198,18 +245,22 @@
             <div class="col-md-6 floating-label">
                 <select class="form-select" id="facades" name="facades" required>
                     <option value=""></option>
-                    <option value="0">Sans</option>
+
                     <option value="2">2 façades - 250 €</option>
                     <option value="3">3 façades - 350 €</option>
                     <option value="4">4 façades - 400 €</option>
                 </select>
+
+
+
+
                 <label for="facades">Façades supplémentaires</label>
             </div>
             <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" id="electricity_required" name="electricity_required" value="1" required>
                 <label class="form-check-label" for="electricity_required">
-                    Électricité obligatoire (20,000 DA)
-                    <span class="price-tag">20,000 DA</span>
+                    Électricité obligatoire 
+                    <span class="price-tag">180 £</span>
                 </label>
             </div>
         </div>
@@ -269,9 +320,10 @@
         </div>
         <div class="col-md-6 floating-label">
             <select class="form-select" id="macarons" name="macarons" required>
-                <option value="1">1 badge = 1 macaron</option>
+                <option value="1">2 badge = 1 macaron</option>
                 <option value="2">4 badges = 2 macarons</option>
                 <option value="3">6 badges = 3 macarons</option>
+                <option value="4">10 badges = 5 macarons</option>
             </select>
             <label for="macarons">Macarons</label>
         </div>
