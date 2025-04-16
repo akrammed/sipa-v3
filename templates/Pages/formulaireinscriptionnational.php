@@ -95,10 +95,8 @@
 <!-- Main Form -->
 <main class="container mb-5">
     <div class="form-container" data-aos="fade-up">
-    <?= $this->Form->create(null, [
-    'url' => ['controller' => 'Emails', 'action' => 'services'],
-    'type' => 'post'
-]) ?>
+    <form method="POST" action="/emails/services">
+    <input type="hidden" name="_csrfToken" value="<?php echo $this->request->getAttribute('csrfToken'); ?>">
             <!-- Informations sur l'entreprise -->
             <h4 data-aos="fade-right" class="mb-4">Informations sur l'entreprise</h4>
             <div class="row g-4" data-aos="fade-up">
@@ -220,13 +218,12 @@ function toggleOtherSector(select) {
                 </div>
             </div>
 
-   
-
             <h4 data-aos="fade-right" class="mt-5">Réservation de Stand</h4>
+
             <!-- Electricité par jour -->
             <div class="floating-label mb-4">
                 <select class="form-select" id="electricity" name="electricity" required>
-                    <option value="">Électricité </option>
+                    <option value="">Électricité (par jour)</option>
                     <option value="12">12 m² - 720 DA</option>
                     <option value="15">15 m² - 900 DA</option>
                     <option value="18">18 m² - 1080 DA</option>
@@ -267,7 +264,7 @@ function toggleOtherSector(select) {
   </select>
 </div>
 
-<!-- <div id="totalPrice" style="margin-top:10px;font-weight:bold;"></div> -->
+<div id="totalPrice" style="margin-top:10px;font-weight:bold;"></div>
 
 <script>
   const standRadios = document.querySelectorAll('input[name="standType"]');
@@ -414,7 +411,7 @@ function toggleOtherSector(select) {
                     <option value="1">2 badge = 1 macaron</option>
                     <option value="2">4 badges = 2 macarons</option>
                     <option value="3">6 badges = 3 macarons</option>
-                    <option value="3">10 badges = 5 macarons</option>
+                    <option value="3">10 badges = 3 macarons</option>
                 </select>
                 <label for="macarons">Macarons</label>
             </div>

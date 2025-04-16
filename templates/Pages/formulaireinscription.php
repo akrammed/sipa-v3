@@ -297,6 +297,7 @@
             </label>
         </div>
     </div>
+    
 
     <!-- Signalétique du Stand -->
     <h4 data-aos="fade-right" class="mt-5">Signalétique du Stand</h4>
