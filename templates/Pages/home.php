@@ -557,15 +557,53 @@
     </div>
 
 </section><!-- /Gallery Section -->
+
+<!-- Section Container -->
+<!-- Section Container -->
+<section class="bg-light py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <!-- Title -->
+      <h1 class="section-title">NOS PARTENAIRES</h1>
+      <!-- Underline -->
+      <div class="w-25 mx-auto bg-primary-subtle" style="height: 2px;"></div>
+    </div>
+
+    <!-- Row for Logos -->
+    <div class="row justify-content-between">
+
+      <!-- Left Column: Chambre Algérienne de la Pêche & de l'Aquaculture -->
+      <div class="col-md-5 text-center">
+        <img src="img/pr2.png" alt="Chambre Algérienne de la Pêche & de l'Aquaculture" style="max-width: 100%; height: auto;margin-top: 50px">
+      </div>
+
+      <!-- Right Column: Centre de Conventions Mohamed Ben Ahmed -->
+      <div class="col-md-5 text-center">
+        <img src="img/pr1.png" alt="Centre de Conventions Mohamed Ben Ahmed" style="max-width: 50%; height: auto; margin-bottom: 50px;">
+      </div>
+
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+</section>
 <section class="sponsors-section">
     <h2 class="section-title">NOS SPONSORS</h2>
     <span class="blue-divider"></span>
     
     <div class="sponsors-container">
-        <!-- Sponsor 1 -->
-        <div class="sponsor-logo">
-            <img src="img/sponsor1.png" alt="Logo Sponsor 1">
-        </div>
+
+
+       
+    <div style="background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; width: 600px; text-align: center;">
+        
+        <!-- Title -->
+        <h2 style="font-size: 28px; color: #003366; margin-top: 0; margin-bottom: 20px; ">SPONSOR MAJEUR</h2>
+        
+        <!-- Logo Image -->
+        <img src="img/sponsor1.png" alt="Logo Sponsor 1 " style="max-width: 100%; height: auto; margin-bottom: 20px;">
+        
+   
+    </div>
+     
         
         <!-- Sponsor 2 -->
         <div class="sponsor-logo">

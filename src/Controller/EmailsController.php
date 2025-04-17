@@ -167,10 +167,53 @@ class EmailsController extends AppController
             '3' => '3 façades - 350 €',
             '4' => '4 façades - 400 €'
         ];
+    
+        $publiciteOptions = [
+            'pub1' => '4ème page de couverture - 2000 €',
+            'pub2' => '3ème page de couverture - 1600 €',
+            'pub3' => '2ème page de couverture - 1500 €',
+            'pub4' => '1/2 page intérieure couleur - 400 €',
+            'none' => 'Aucune publicité'
+        ];
+    
+        $macaronsValues = [
+            '1' => '2 badges = 1 macaron',
+            '2' => '4 badges = 2 macarons',
+            '3' => '6 badges = 3 macarons',
+            '4' => '10 badges = 3 macarons'
+        ];
         
         $clientIntro = $isClient ? 
             "<p>Merci pour votre inscription au Salon International de la Pêche et de l'Aquaculture (SIPA 2025). Voici un récapitulatif de votre demande :</p>" : 
             "<p>Une nouvelle demande de participation a été soumise avec les détails suivants :</p>";
+        
+        // Process selected products if any
+        $selectedProductsHtml = "";
+        if (!empty($data['selected_products']) && is_array($data['selected_products'])) {
+            $selectedProductsHtml = "<h3>Services supplémentaires</h3><table><tr><th>Produit</th><th>Prix</th></tr>";
+            
+            foreach ($data['selected_products'] as $productId => $productData) {
+                $product = json_decode($productData, true);
+                if ($product) {
+                    $selectedProductsHtml .= "<tr><td>{$product['name']}</td><td>{$product['price']} €</td></tr>";
+                }
+            }
+            
+            $selectedProductsHtml .= "</table>";
+        }
+    
+        // Handle other activity sector
+        $activitySector = $data['activity_sector'] ?? '';
+        if ($activitySector === 'Autre' && !empty($data['other_activity_sector'])) {
+            $activitySector .= ' - ' . $data['other_activity_sector'];
+        }
+    
+        // Handle electricity selection
+        $electricityOption = '';
+        if (!empty($data['electricity'])) {
+            $electricityValue = $data['electricity'];
+            $electricityOption = "{$electricityValue} m² - " . ($electricityValue * 5) . " £";
+        }
         
         $emailContent = "
             <html>
@@ -193,7 +236,7 @@ class EmailsController extends AppController
                     <h3>Informations sur l'entreprise</h3>
                     <table>
                         <tr><th>Raison Sociale</th><td>" . ($data['company_name'] ?? '') . "</td></tr>
-                        <tr><th>Secteur d'activité</th><td>" . ($data['activity_sector'] ?? '') . "</td></tr>
+                        <tr><th>Secteur d'activité</th><td>" . $activitySector . "</td></tr>
                         <tr><th>Registre de commerce</th><td>" . ($data['registry_number'] ?? '') . "</td></tr>
                         <tr><th>Identifiant fiscal</th><td>" . ($data['tax_id'] ?? '') . "</td></tr>
                         <tr><th>Adresse</th><td>" . ($data['address'] ?? '') . "</td></tr>
@@ -213,48 +256,66 @@ class EmailsController extends AppController
                             <th>Type de Stand</th>
                             <td>" . (isset($data['stand_type']) && isset($standType[$data['stand_type']]) ? $standType[$data['stand_type']] : '') . "</td>
                         </tr>
-                        <tr><th>Superficie demandée</th><td>" . ($data['area'] ?? '') . " m²</td></tr>
+                        <tr><th>Superficie demandée</th><td>" . ($data['area'] ?? '') . " m²</td></tr>";
+                        
+        // Calculate stand price if possible
+        if (!empty($data['stand_type']) && !empty($data['area'])) {
+            $pricePerSqm = [
+                'amenage' => 250,
+                'non_amenage' => 200,
+                'decouvert' => 150
+            ];
+            if (isset($pricePerSqm[$data['stand_type']])) {
+                $totalPrice = $pricePerSqm[$data['stand_type']] * intval($data['area']);
+                $emailContent .= "<tr><th>Prix total du stand</th><td>{$totalPrice} €</td></tr>";
+            }
+        }
+        
+        $emailContent .= "
+                        <tr>
+                            <th>Électricité</th>
+                            <td>" . $electricityOption . "</td>
+                        </tr>
                         <tr>
                             <th>Façades supplémentaires</th>
                             <td>" . (isset($data['facades']) && isset($facadesValues[$data['facades']]) ? $facadesValues[$data['facades']] : '') . "</td>
                         </tr>
                         <tr>
                             <th>Électricité obligatoire</th>
-                            <td>" . (!empty($data['electricity_required']) ? 'Oui - 20,000 DA' : 'Non') . "</td>
+                            <td>" . (!empty($data['electricity_required']) ? 'Oui - 180 £' : 'Non') . "</td>
                         </tr>
                     </table>
                     
                     <h3>Publicité sur le Catalogue</h3>
                     <table>
-                        <tr><th>Option</th><th>Sélectionné</th></tr>
-                        <tr><td>4ème page de couverture (2000 €)</td><td>" . (!empty($data['pub1']) ? 'Oui' : 'Non') . "</td></tr>
-                        <tr><td>3ème page de couverture (1600 €)</td><td>" . (!empty($data['pub2']) ? 'Oui' : 'Non') . "</td></tr>
-                        <tr><td>2ème page de couverture (1500 €)</td><td>" . (!empty($data['pub3']) ? 'Oui' : 'Non') . "</td></tr>
-                        <tr><td>1/2 page intérieure couleur (400 €)</td><td>" . (!empty($data['pub4']) ? 'Oui' : 'Non') . "</td></tr>
+                        <tr><th>Option choisie</th><td>";
+        
+        // Determine which publicity option was selected
+        if (!empty($data['publicite_catalogue']) && isset($publiciteOptions[$data['publicite_catalogue']])) {
+            $emailContent .= $publiciteOptions[$data['publicite_catalogue']];
+        } else {
+            $emailContent .= "Aucune sélection";
+        }
+        
+        $emailContent .= "</td></tr>
                     </table>
+                    
+                    " . $selectedProductsHtml . "
                     
                     <h3>Signalétique et Confirmation</h3>
                     <table>
                         <tr><th>Nom sur l'enseigne</th><td>" . ($data['stand_name'] ?? '') . "</td></tr>
-                        <tr><th>Nom de la société (confirmation)</th><td>" . ($data['company_name_confirmation'] ?? '') . "</td></tr>
-                        <tr><th>Nombre de badges exposants</th><td>" . ($data['badges_count'] ?? '') . "</td></tr>
-                        <tr><th>Macarons</th><td>";
-                        
-        if (!empty($data['macarons'])) {
-            switch ($data['macarons']) {
-                case '1':
-                    $emailContent .= "1 badge = 1 macaron";
-                    break;
-                case '2':
-                    $emailContent .= "4 badges = 2 macarons";
-                    break;
-                case '3':
-                    $emailContent .= "6 badges = 3 macarons";
-                    break;
-            }
+                        <tr><th>Nom de la société (confirmation)</th><td>" . ($data['company_name_confirmation'] ?? '') . "</td></tr>";
+        
+        // Handle badges
+        $badgesCount = $data['badges_count'] ?? '';
+        if (empty($badgesCount) && !empty($data['badges_option']) && $data['badges_option'] !== 'autre') {
+            $badgesCount = $data['badges_option'];
         }
         
-        $emailContent .= "</td></tr>
+        $emailContent .= "
+                        <tr><th>Nombre de badges exposants</th><td>" . $badgesCount . "</td></tr>
+                        <tr><th>Macarons</th><td>" . (isset($data['macarons']) && isset($macaronsValues[$data['macarons']]) ? $macaronsValues[$data['macarons']] : '') . "</td></tr>
                         <tr><th>Demande spécifique</th><td>" . ($data['specific_request'] ?? '') . "</td></tr>
                     </table>
                     
@@ -286,14 +347,43 @@ class EmailsController extends AppController
         $facadesValues = [
             '0' => 'Sans supplément',
             '1' => '1 façade sans supplément',
-            '2' => '2 façades - Nouveau Prix',
-            '3' => '3 façades - Nouveau Prix',
-            '4' => '4 façades - Nouveau Prix'
+            '2' => '2 façades - 17.000 Da',
+            '3' => '3 façades - 22.000 Da',
+            '4' => '4 façades - 31.000 Da'
+        ];
+        
+        $standTypes = [
+            '17000' => 'Stand aménagé (17.000 DA/m²)',
+            '12000' => 'Stand non aménagé (12.000 DA/m²)',
+            '10000' => 'Emplacement découvert (10.000 DA/m²)'
+        ];
+        
+        $publiciteOptions = [
+            '4e' => '4ème page de couverture (120.000 DA)',
+            '3e' => '3ème page de couverture (100.000 DA)',
+            '2e' => '2ème page de couverture (80.000 DA)',
+            'demi' => '1/2 page intérieure couleur (30.000 DA)'
+        ];
+        
+        $badgesOptions = [
+            '1' => '1 badge',
+            '2' => '2 badges',
+            '4' => '4 badges',
+            '6' => '6 badges',
+            '8' => '8 badges',
+            '10' => '10 badges',
+            'autre' => 'Autre quantité: ' . ($data['badges_count'] ?? '')
+        ];
+        
+        $macaronsOptions = [
+            '1' => '2 badges = 1 macaron',
+            '2' => '4 badges = 2 macarons',
+            '3' => '6 badges = 3 macarons ou 10 badges = 3 macarons'
         ];
         
         $clientIntro = $isClient ? 
-            "<p>Merci pour votre demande de services supplémentaires pour le SIPA 2025. Voici un récapitulatif de votre demande :</p>" : 
-            "<p>Une nouvelle demande de services supplémentaires a été soumise avec les détails suivants :</p>";
+            "<p>Merci pour votre demande de participation au SIPA 2025. Voici un récapitulatif de votre demande :</p>" : 
+            "<p>Une nouvelle demande de participation a été soumise avec les détails suivants :</p>";
         
         $emailContent = "
             <html>
@@ -310,13 +400,20 @@ class EmailsController extends AppController
             </head>
             <body>
                 <div class='container'>
-                    <h2>SIPA 2025 - Services Supplémentaires</h2>
+                    <h2>SIPA 2025 - Formulaire de Participation</h2>
                     {$clientIntro}
                     
                     <h3>Informations sur l'entreprise</h3>
                     <table>
                         <tr><th>Raison Sociale</th><td>" . ($data['company_name'] ?? '') . "</td></tr>
-                        <tr><th>Secteur d'activité</th><td>" . ($data['activity_sector'] ?? '') . "</td></tr>
+                        <tr><th>Secteur d'activité</th><td>" . ($data['activity_sector'] ?? '') . "</td></tr>";
+        
+        // Add other sector if specified
+        if (isset($data['activity_sector']) && $data['activity_sector'] === 'Autre') {
+            $emailContent .= "<tr><th>Précision secteur</th><td>" . ($data['other_activity_sector'] ?? '') . "</td></tr>";
+        }
+        
+        $emailContent .= "
                         <tr><th>Registre de commerce</th><td>" . ($data['registry_number'] ?? '') . "</td></tr>
                         <tr><th>Identifiant fiscal</th><td>" . ($data['tax_id'] ?? '') . "</td></tr>
                         <tr><th>Adresse</th><td>" . ($data['address'] ?? '') . "</td></tr>
@@ -330,62 +427,91 @@ class EmailsController extends AppController
                         <tr><th>Site Web</th><td>" . ($data['website'] ?? '') . "</td></tr>
                     </table>
                     
-                    <h3>Détails de la Demande</h3>
+                    <h3>Réservation de Stand</h3>
                     <table>
+                        <tr>
+                            <th>Type de Stand</th>
+                            <td>" . (isset($data['standType']) && isset($standTypes[$data['standType']]) ? $standTypes[$data['standType']] : '') . "</td>
+                        </tr>
+                        <tr><th>Superficie demandée</th><td>" . ($data['area'] ?? '') . " m²</td></tr>";
+        
+        // Calculate total price if both standType and area are set
+        if (!empty($data['standType']) && !empty($data['area'])) {
+            $totalPrice = intval($data['standType']) * intval($data['area']);
+            $emailContent .= "<tr><th>Prix total du stand</th><td>" . number_format($totalPrice, 0, ',', '.') . " DA</td></tr>";
+        }
+        
+        $emailContent .= "
                         <tr>
                             <th>Électricité (par jour)</th>
                             <td>" . (isset($data['electricity']) && isset($electricityOptions[$data['electricity']]) ? $electricityOptions[$data['electricity']] : '') . "</td>
                         </tr>
-                        <tr><th>Superficie demandée</th><td>" . ($data['area'] ?? '') . " m²</td></tr>
                         <tr>
                             <th>Façades supplémentaires</th>
                             <td>" . (isset($data['facades']) && isset($facadesValues[$data['facades']]) ? $facadesValues[$data['facades']] : '') . "</td>
                         </tr>
                         <tr>
-                            <th>Électricité obligatoire</th>
-                            <td>" . (!empty($data['electricity_required']) ? 'Oui - 20,000 DA' : 'Non') . "</td>
+                            <th>Électricité obligatoire (20.000 DA)</th>
+                            <td>Oui</td>
                         </tr>
                     </table>
                     
                     <h3>Publicité sur le Catalogue</h3>
-                    <table>
-                        <tr><th>Option</th><th>Sélectionné</th></tr>
-                        <tr><td>4ème page de couverture (110.000 DA)</td><td>" . (!empty($data['pub1']) ? 'Oui' : 'Non') . "</td></tr>
-                        <tr><td>3ème page de couverture (85.000 DA)</td><td>" . (!empty($data['pub2']) ? 'Oui' : 'Non') . "</td></tr>
-                        <tr><td>2ème page de couverture (80.000 DA)</td><td>" . (!empty($data['pub3']) ? 'Oui' : 'Non') . "</td></tr>
-                        <tr><td>1/2 page intérieure couleur (30.000 DA)</td><td>" . (!empty($data['pub4']) ? 'Oui' : 'Non') . "</td></tr>
-                        <tr><td>Présentation vidéo de votre entreprise (50.000 DA)</td><td>" . (!empty($data['pub5']) ? 'Oui' : 'Non') . "</td></tr>
-                    </table>
+                    <table>";
+        
+        if (!empty($data['publicite']) && isset($publiciteOptions[$data['publicite']])) {
+            $emailContent .= "<tr><th>Option sélectionnée</th><td>" . $publiciteOptions[$data['publicite']] . "</td></tr>";
+        } else {
+            $emailContent .= "<tr><td colspan='2'>Aucune option sélectionnée</td></tr>";
+        }
+        
+        $emailContent .= "</table>
                     
                     <h3>Services supplémentaires</h3>
                     <table>
-                        <tr><th>Service</th><th>Sélectionné</th></tr>
-                        <tr><td>Table supplémentaire (4.200 DA)</td><td>" . (!empty($data['service1']) ? 'Oui' : 'Non') . "</td></tr>
-                        <tr><td>Chaise supplémentaire (1.800 DA)</td><td>" . (!empty($data['service2']) ? 'Oui' : 'Non') . "</td></tr>
-                        <tr><td>Hôtesse d'accueil (par jour) (4.200 DA)</td><td>" . (!empty($data['service3']) ? 'Oui' : 'Non') . "</td></tr>
-                        <tr><td>Traducteur (par jour) (12.000 DA)</td><td>" . (!empty($data['service4']) ? 'Oui' : 'Non') . "</td></tr>
-                        <tr><td>Comptoir d'accueil (par jour) (5.000 DA)</td><td>" . (!empty($data['service5']) ? 'Oui' : 'Non') . "</td></tr>
-                    </table>
+                        <tr><th>Produit</th><th>Prix</th></tr>";
+        
+        // Parse selected products from the form data
+        $selectedProducts = [];
+        foreach ($data as $key => $value) {
+            if (strpos($key, 'product_') === 0 && $value == '1') {
+                // Extract product details from key or additional fields if available
+                // This would need to be adjusted based on how you're storing the product data
+                $productName = "Product"; // Replace with actual product name extraction
+                $productPrice = "Price"; // Replace with actual price extraction
+                $selectedProducts[] = ["name" => $productName, "price" => $productPrice];
+            }
+        }
+        
+        if (!empty($selectedProducts)) {
+            foreach ($selectedProducts as $product) {
+                $emailContent .= "<tr><td>" . $product['name'] . "</td><td>" . $product['price'] . "</td></tr>";
+            }
+        } else {
+            $emailContent .= "<tr><td colspan='2'>Aucun service supplémentaire sélectionné</td></tr>";
+        }
+        
+        $emailContent .= "</table>
                     
                     <h3>Signalétique et Confirmation</h3>
                     <table>
                         <tr><th>Nom sur l'enseigne</th><td>" . ($data['stand_name'] ?? '') . "</td></tr>
                         <tr><th>Nom de la société (confirmation)</th><td>" . ($data['company_name_confirmation'] ?? '') . "</td></tr>
-                        <tr><th>Nombre de badges exposants</th><td>" . ($data['badges_count'] ?? '') . "</td></tr>
-                        <tr><th>Macarons</th><td>";
-                        
-        if (!empty($data['macarons'])) {
-            switch ($data['macarons']) {
-                case '1':
-                    $emailContent .= "1 badge = 1 macaron";
-                    break;
-                case '2':
-                    $emailContent .= "4 badges = 2 macarons";
-                    break;
-                case '3':
-                    $emailContent .= "6 badges = 3 macarons";
-                    break;
+                        <tr><th>Nombre de badges exposants</th><td>";
+        
+        if (isset($data['badges_option'])) {
+            if ($data['badges_option'] === 'autre' && !empty($data['badges_count'])) {
+                $emailContent .= $data['badges_count'] . " badges";
+            } else if (isset($badgesOptions[$data['badges_option']])) {
+                $emailContent .= $badgesOptions[$data['badges_option']];
             }
+        }
+        
+        $emailContent .= "</td></tr>
+                        <tr><th>Macarons</th><td>";
+        
+        if (!empty($data['macarons']) && isset($macaronsOptions[$data['macarons']])) {
+            $emailContent .= $macaronsOptions[$data['macarons']];
         }
         
         $emailContent .= "</td></tr>

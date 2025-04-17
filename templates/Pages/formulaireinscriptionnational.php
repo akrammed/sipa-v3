@@ -223,98 +223,115 @@
 
 
             <div class="row g-4 mb-3">
-                <div class="form-group">
-                    <label><strong>Choix du Stand et Superficie Commandée</strong></label><br>
+            <div class="row g-4 mb-3">
+    <div class="form-group">
+        <label for="stand_type"><strong>Type de Stand</strong></label>
+        <select class="form-select" id="stand_type" name="standType" required>
+            <option value="">-- Sélectionner un type de stand --</option>
+            <option value="17000">Stand aménagé (17.000 DA/m²)</option>
+            <option value="12000">Stand non aménagé (12.000 DA/m²)</option>
+            <option value="10000">Emplacement découvert (10.000 DA/m²)</option>
+        </select>
+    </div>
 
-                    <label><input type="radio" name="standType" value="17000" required> Stand aménagé (17.000 DA/m²)</label><br>
-                    <label><input type="radio" name="standType" value="12000"> Stand non aménagé (12.000 DA/m²)</label><br>
-                    <label><input type="radio" name="standType" value="10000"> Emplacement découvert (10.000 DA/m²)</label>
-                </div>
+    <div id="surfaceSelectContainer" class="form-group" style="display:none;">
+        <label for="surfaceSelect">Superficie demandée (m²)</label>
+        <select id="surfaceSelect" class="form-control" name="area" required>
+            <option value="">-- Choisir une superficie --</option>
+            <option value="12">12 m²</option>
+            <option value="15">15 m²</option>
+            <option value="18">18 m²</option>
+            <option value="21">21 m²</option>
+            <option value="24">24 m²</option>
+            <option value="27">27 m²</option>
+            <option value="36">36 m²</option>
+            <option value="48">48 m²</option>
+            <option value="54">54 m²</option>
+            <option value="60">60 m²</option>
+        </select>
+    </div>
 
+    <div id="totalPrice" style="margin-top:10px;font-weight:bold;"></div>
 
-                <div id="surfaceSelectContainer" class="form-group" style="display:none;">
-                    <label for="surfaceSelect">Superficie demandée (m²)</label>
-                    <select id="surfaceSelect" class="form-control" name="area" required>
-                        <option value="">-- Choisir une superficie --</option>
-                        <option value="12">12 m²</option>
-                        <option value="15">15 m²</option>
-                        <option value="18">18 m²</option>
-                        <option value="21">21 m²</option>
-                        <option value="24">24 m²</option>
-                        <option value="27">27 m²</option>
-                        <option value="36">36 m²</option>
-                        <option value="48">48 m²</option>
-                        <option value="54">54 m²</option>
-                        <option value="60">60 m²</option>
-                    </select>
-                </div>
+    <!-- Electricité par jour -->
+    <div class="floating-label mb-4">
+        <select class="form-select" id="electricity" name="electricity" required>
+            <option value="">Électricité (par jour)</option>
+            <option value="12">12 m² - 720 DA</option>
+            <option value="15">15 m² - 900 DA</option>
+            <option value="18">18 m² - 1080 DA</option>
+            <option value="21">21 m² - 1260 DA</option>
+            <option value="24">24 m² - 1440 DA</option>
+            <option value="27">27 m² - 1620 DA</option>
+            <option value="36">36 m² - 2160 DA</option>
+            <option value="48">48 m² - 2890 DA</option>
+            <option value="54">54 m² - 3240 DA</option>
+            <option value="60">60 m² - 3600 DA</option>
+        </select>
+        <label for="electricity">Électricité (par jour)</label>
+    </div>
+    <div class="col-md-6 floating-label">
+        <select class="form-select" id="facades" name="facades" required>
+            <option value="0">Sans supplément</option>
+            <option value="1">1 façade sans supplément</option>
+            <option value="2">2 façades - 17.000 Da</option>
+            <option value="3">3 façades - 22.000 Da</option>
+            <option value="4">4 façades - 31.000 Da</option>
+        </select>
+        <label for="facades">Façades supplémentaires</label>
+    </div>
+</div>
 
-                <div id="totalPrice" style="margin-top:10px;font-weight:bold;"></div>
+<script>
+    // Updated script to work with dropdown instead of radio buttons
+    const standTypeSelect = document.getElementById('stand_type');
+    const surfaceSelectContainer = document.getElementById("surfaceSelectContainer");
+    const surfaceSelect = document.getElementById("surfaceSelect");
+    const electricitySelect = document.getElementById("electricity");
+    const totalPriceDiv = document.getElementById("totalPrice");
 
-                <!-- Electricité par jour -->
-                <div class="floating-label mb-4">
-                    <select class="form-select" id="electricity" name="electricity" required>
-                        <option value="">Électricité (par jour)</option>
-                        <option value="12">12 m² - 720 DA</option>
-                        <option value="15">15 m² - 900 DA</option>
-                        <option value="18">18 m² - 1080 DA</option>
-                        <option value="21">21 m² - 1260 DA</option>
-                        <option value="24">24 m² - 1440 DA</option>
-                        <option value="27">27 m² - 1620 DA</option>
-                        <option value="36">36 m² - 2160 DA</option>
-                        <option value="48">48 m² - 2890 DA</option>
-                        <option value="54">54 m² - 3240 DA</option>
-                        <option value="60">60 m² - 3600 DA</option>
-                    </select>
-                    <label for="electricity">Électricité (par jour)</label>
-                </div>
-                <div class="col-md-6 floating-label">
-                    <select class="form-select" id="facades" name="facades" required>
-                        <option value="0">Sans supplément</option>
-                        <option value="1">1 façade sans supplément</option>
-                        <option value="2">2 façades - 17.000 Da</option>
-                        <option value="3">3 façades - 22.000 Da</option>
-                        <option value="4">4 façades - 31.000 Da</option>
-                    </select>
-                    <label for="facades">Façades supplémentaires</label>
-                </div>
-            </div>
+    let selectedPrice = 0;
 
-            <script>
-                const standRadios = document.querySelectorAll('input[name="standType"]');
-                const surfaceSelectContainer = document.getElementById("surfaceSelectContainer");
-                const surfaceSelect = document.getElementById("surfaceSelect");
-                const electricitySelect = document.getElementById("electricity");
-                const totalPriceDiv = document.getElementById("totalPrice");
+    // Add event listener to the stand type dropdown
+    standTypeSelect.addEventListener("change", function() {
+        selectedPrice = parseInt(this.value);
+        if (selectedPrice) {
+            surfaceSelectContainer.style.display = "block";
+            totalPriceDiv.innerHTML = ""; // Reset total
+            
+            // If surface is already selected, recalculate the price
+            const selectedSurface = parseInt(surfaceSelect.value);
+            if (selectedSurface) {
+                calculateTotal(selectedSurface, selectedPrice);
+            }
+        } else {
+            surfaceSelectContainer.style.display = "none";
+            totalPriceDiv.innerHTML = "";
+        }
+    });
 
-                let selectedPrice = 0;
+    surfaceSelect.addEventListener("change", function() {
+        const surface = parseInt(this.value);
+        if (surface && selectedPrice) {
+            calculateTotal(surface, selectedPrice);
+        } else {
+            totalPriceDiv.innerHTML = "";
+        }
+    });
 
-                standRadios.forEach(radio => {
-                    radio.addEventListener("change", function() {
-                        selectedPrice = parseInt(this.value);
-                        surfaceSelectContainer.style.display = "block";
-                        totalPriceDiv.innerHTML = ""; // Reset total
-                    });
-                });
+    function calculateTotal(surface, price) {
+        const total = surface * price;
+        totalPriceDiv.innerHTML = `💰 Prix total : <strong>${total.toLocaleString()} DA</strong>`;
 
-                surfaceSelect.addEventListener("change", function() {
-                    const surface = parseInt(this.value);
-                    if (surface && selectedPrice) {
-                        const total = surface * selectedPrice;
-                        totalPriceDiv.innerHTML = `💰 Prix total : <strong>${total.toLocaleString()} DA</strong>`;
-
-                        // Sélectionner automatiquement l'option d'électricité correspondante
-                        for (let i = 0; i < electricitySelect.options.length; i++) {
-                            if (electricitySelect.options[i].value == surface.toString()) {
-                                electricitySelect.selectedIndex = i;
-                                break;
-                            }
-                        }
-                    } else {
-                        totalPriceDiv.innerHTML = "";
-                    }
-                });
-            </script>
+        // Sélectionner automatiquement l'option d'électricité correspondante
+        for (let i = 0; i < electricitySelect.options.length; i++) {
+            if (electricitySelect.options[i].value == surface.toString()) {
+                electricitySelect.selectedIndex = i;
+                break;
+            }
+        }
+    }
+</script>
             <!-- Checkbox Électricité Obligatoire -->
             <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" id="electricity_required" name="electricity_required" value="1" checked disabled>
@@ -359,43 +376,173 @@
 
     <!-- Services supplémentaires -->
     <h4 data-aos="fade-right" class="mt-5 mb-4">Services supplémentaires</h4>
-    <div data-aos="fade-up" class="mb-3">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="service1" name="service1" value="1">
-            <label class="form-check-label" for="service1">
-                Table supplémentaire
-                <span class="price-tag">4.200 DA</span>
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="service2" name="service2" value="1">
-            <label class="form-check-label" for="service2">
-                Chaise supplémentaire
-                <span class="price-tag">1.800 DA</span>
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="service3" name="service3" value="1">
-            <label class="form-check-label" for="service3">
-                Hôtesse d'accueil (par jour)
-                <span class="price-tag">4.200 DA</span>
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="service4" name="service4" value="1">
-            <label class="form-check-label" for="service4">
-                Traducteur (par jour)
-                <span class="price-tag">12.000 DA</span>
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="service5" name="service5" value="1">
-            <label class="form-check-label" for="service5">
-                Comptoir d'accueil (par jour)
-                <span class="price-tag">5.000 DA</span>
-            </label>
-        </div>
+<div data-aos="fade-up" class="mb-3">
+    <div class="form-group mb-3">
+        <label for="category-select" class="form-label">Catégorie de produit</label>
+        <select class="form-select" id="category-select">
+            <option value="">-- Sélectionner une catégorie --</option>
+            <option value="chairs">Chaises</option>
+            <option value="tables">Tables</option>
+            <option value="sofas">Salons & Bureaux</option>
+            <option value="electronics">Électroniques & Accessoires</option>
+        </select>
     </div>
+    
+    <div class="form-group mb-3">
+        <label for="product-select" class="form-label">Produit</label>
+        <select class="form-select" id="product-select" disabled>
+            <option value="">-- Sélectionner d'abord une catégorie --</option>
+        </select>
+    </div>
+    
+    <div class="selected-products mt-4" id="selected-products-list">
+        <!-- Selected products will appear here -->
+    </div>
+
+    <script>
+        // Product catalog data organized by categories
+        const productCatalog = {
+            chairs: [
+                { name: "Chaise EVEREST B", price: 2500.00, details: "" },
+                { name: "Chaise SCANDINAVE B", price: 4200.00, details: "" },
+                { name: "Chaise RÉUNION N", price: 2500.00, details: "" },
+                { name: "Chaise OR rouge et beige", price: 2000.00, details: "" },
+                { name: "Chaise PATCHWORK gris", price: 8000.00, details: "" },
+                { name: "Chaise ALINEA B", price: 6500.00, details: "" },
+                { name: "Chaise haute SIMILI, noire", price: 5500.00, details: "" },
+                { name: "Chaise haute CONFORT, n b r", price: 7000.00, details: "" }
+            ],
+            tables: [
+                { name: "Table RONDE blanche", price: 5000.00, details: "80 cm de diamètre. 70 cm de hauteur." },
+                { name: "Table ATELIER", price: 10500.00, details: "Dimension 140 cm x 65 cm. 70 cm de hauteur grise" },
+                { name: "Table SCANDINAVE RONDE en verre", price: 7000.00, details: "Dimension 80 cm de diamètre 75 cm de hauteur blanche" },
+                { name: "Table SCANDINAVE CARÉE en verre", price: 8500.00, details: "Dimension 85 cm x 85 cm 75 cm de hauteur" },
+                { name: "Table haute SCANDINAVE", price: 8000.00, details: "Dimension 60 cm de diamètre 100 cm de hauteur" },
+                { name: "Table haute CLASSIC noir", price: 8500.00, details: "60cm diamètre" },
+                { name: "Table basse TRIPODE blanche", price: 8500.00, details: "Dimension 60 cm de diamètre 60 cm de hauteur" },
+                { name: "Grande table SIMPLY", price: 14000.00, details: "Dimension 120 cm x 70 cm blanche" },
+                { name: "Grande table ROUNDED blanche", price: 14000.00, details: "Dimension 120 cm x 90 cm" },
+                { name: "Table basse STANDARD noire et blanc", price: 5500.00, details: "" }
+            ],
+            sofas: [
+                { name: "Salon Standard noire 1 place", price: 7000.00, details: "" },
+                { name: "Salon Standard noire 4 places + Table basse", price: 25000.00, details: "" },
+                { name: "Salon Haute Qualité 4 places + Table basse rouge", price: 60000.00, details: "" },
+                { name: "Salon VIP 4 places + Table basse bleu gris et beige", price: 50000.00, details: "" },
+                { name: "Desk STANDARD", price: 10500.00, details: "Dimension 80 x 35 x 90 cm blanche" },
+                { name: "Desk STANDARD Avec Habillage", price: 14000.00, details: "80 x 35 x 90 cm blanche" }
+            ],
+            electronics: [
+                { name: "REFRIGERATEUR 90L", price: 10500.00, details: "" },
+                { name: "Machine à café - capsules", price: 16000.00, details: "" },
+                { name: "ECRAN TV LED 32\"", price: 5000.00, details: "" },
+                { name: "ECRAN TV LED 43\"", price: 6000.00, details: "" },
+                { name: "ECRAN TV LED 50\"", price: 9000.00, details: "" },
+                { name: "ECRAN TV LED 55\"", price: 12000.00, details: "" },
+                { name: "ECRAN TV LED 65\"", price: 25000.00, details: "" },
+                { name: "Support TV sur pieds", price: 6000.00, details: "" },
+                { name: "VITRINE Réf. MB26-CO", price: 17000.00, details: "" },
+                { name: "VITRINE Réf. MB26-UN", price: 17000.00, details: "" },
+                { name: "VITRINE Réf. MB26-BI", price: 21000.00, details: "" },
+                { name: "PORTE DOCUMENTS A4 Réf. MB27-P", price: 8000.00, details: "" },
+                { name: "PORTE DOCUMENTS A4 Réf. MB27-PM", price: 6500.00, details: "" },
+                { name: "PORTE DOCUMENTS A4 Réf. MB27-M", price: 16000.00, details: "" },
+                { name: "PLANTES ARTIFICIELLES", price: 5500.00, details: "" },
+                { name: "MOQUETTE", price: 1700.00, details: "" },
+                { name: "Porte en ALUMINIUM pour réserve", price: 16000.00, details: "" },
+                { name: "GUIDE LINE", price: 5000.00, details: "" },
+                { name: "STRUCTURE STRUSS", price: 2500.00, details: "" },
+                { name: "PUPITRE", price: 16000.00, details: "" },
+                { name: "ÉTAGÈRE métallique", price: 6000.00, details: "" },
+                { name: "CORBEILLE en plastique", price: 800.00, details: "" },
+                { name: "CORBEILLE métalique", price: 1600.00, details: "" },
+                { name: "Réglette avec 3 spots électriques", price: 3200.00, details: "" },
+                { name: "MULTIPRISES", price: 800.00, details: "" }
+            ]
+        };
+
+        // Get the DOM elements
+        const categorySelect = document.getElementById('category-select');
+        const productSelect = document.getElementById('product-select');
+        const selectedProductsList = document.getElementById('selected-products-list');
+
+        // Add event listener for category selection
+        categorySelect.addEventListener('change', function() {
+            const selectedCategory = this.value;
+            
+            // Clear product dropdown
+            productSelect.innerHTML = '';
+            
+            if (selectedCategory) {
+                // Enable product dropdown
+                productSelect.disabled = false;
+                
+                // Add default option
+                const defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.textContent = '-- Sélectionner un produit --';
+                productSelect.appendChild(defaultOption);
+                
+                // Add product options for the selected category
+                productCatalog[selectedCategory].forEach(product => {
+                    const option = document.createElement('option');
+                    option.value = JSON.stringify(product);
+                    option.textContent = `${product.name} - ${product.price.toLocaleString()} DA`;
+                    productSelect.appendChild(option);
+                });
+            } else {
+                // Disable product dropdown if no category is selected
+                productSelect.disabled = true;
+                const defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.textContent = '-- Sélectionner d\'abord une catégorie --';
+                productSelect.appendChild(defaultOption);
+            }
+        });
+
+        // Add event listener for product selection
+        productSelect.addEventListener('change', function() {
+            const selectedProductValue = this.value;
+            
+            if (selectedProductValue) {
+                const product = JSON.parse(selectedProductValue);
+                addProductToSelection(product);
+                
+                // Reset product selection for another choice
+                this.value = '';
+            }
+        });
+
+        // Function to add a product to the selection list
+        function addProductToSelection(product) {
+            // Create a unique ID for this product instance
+            const productId = 'product_' + Date.now();
+            
+            // Create the checkbox div similar to your original format
+            const checkboxDiv = document.createElement('div');
+            checkboxDiv.className = 'form-check';
+            checkboxDiv.innerHTML = `
+                <input class="form-check-input" type="checkbox" id="${productId}" name="${productId}" value="1" checked>
+                <label class="form-check-label" for="${productId}">
+                    ${product.name}
+                    <span class="price-tag">${product.price.toLocaleString()} DA</span>
+                </label>
+                ${product.details ? `<small class="form-text text-muted d-block">${product.details}</small>` : ''}
+            `;
+            
+            // Add the checkbox to the selected products list
+            selectedProductsList.appendChild(checkboxDiv);
+            
+            // Add event listener to remove the product when unchecked
+            const checkbox = checkboxDiv.querySelector('input[type="checkbox"]');
+            checkbox.addEventListener('change', function() {
+                if (!this.checked) {
+                    checkboxDiv.remove();
+                }
+            });
+        }
+    </script>
+</div>
 
     <h4 data-aos="fade-right" class="mt-5 mb-4">Signalétique du Stand</h4>
     <div data-aos="fade-up" class="mb-3">

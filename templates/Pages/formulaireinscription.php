@@ -93,7 +93,6 @@
     </div>
 </section>
 
-<!-- Main Form -->
 <main class="container mb-3">
     <div class="form-container" data-aos="fade-up">
         <form method="POST" action="/emails/participation">
@@ -195,9 +194,9 @@
                 <label for="stand_type">Type de Stand</label>
                 <select class="form-select" id="stand_type" name="stand_type" required>
                     <option value=""></option>
-                    <option value="250">Stand aménagé - 250 €/m²</option>
-                    <option value="200">Stand non aménagé - 200 €/m²</option>
-                    <option value="150">Emplacement découvert - 150 €/m²</option>
+                    <option value="amenage">Stand aménagé - 250 €/m²</option>
+                    <option value="non_amenage">Stand non aménagé - 200 €/m²</option>
+                    <option value="decouvert">Emplacement découvert - 150 €/m²</option>
                 </select>
             </div>
 
@@ -249,10 +248,17 @@
 
                     let selectedPrice = 0;
 
+                    // Map stand type values to their prices
+                    const standTypePrices = {
+                        'amenage': 250,
+                        'non_amenage': 200,
+                        'decouvert': 150
+                    };
+
                     // Afficher la surface quand le type de stand est sélectionné
                     standTypeSelect.addEventListener('change', function() {
                         const selectedValue = this.value;
-                        selectedPrice = parseInt(selectedValue);
+                        selectedPrice = standTypePrices[selectedValue];
 
                         if (selectedValue) {
                             surfaceContainer.style.display = 'block';
@@ -299,19 +305,13 @@
                 });
             </script>
             <div class="row g-4">
-
                 <div class="col-md-6 floating-label">
                     <select class="form-select" id="facades" name="facades" required>
-                        <option value=""></option>
-
+                        <option value="0">Sans</option>
                         <option value="2">2 façades - 250 €</option>
                         <option value="3">3 façades - 350 €</option>
                         <option value="4">4 façades - 400 €</option>
                     </select>
-
-
-
-
                     <label for="facades">Façades supplémentaires</label>
                 </div>
                 <div class="form-check mb-3">
@@ -321,7 +321,6 @@
                         <span class="price-tag">180 £</span>
                     </label>
                 </div>
-
             </div>
     </div>
 
@@ -356,8 +355,189 @@
                 <span class="price-tag">400 €</span>
             </label>
         </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="pub_none" name="publicite_catalogue" value="none">
+            <label class="form-check-label" for="pub_none">
+                Aucune publicité
+            </label>
+        </div>
     </div>
 
+    <h4 data-aos="fade-right" class="mt-5 mb-4">Services supplémentaires</h4>
+    <div data-aos="fade-up" class="mb-3">
+        <div class="form-group mb-3">
+            <label for="category-select" class="form-label">Catégorie de produit</label>
+            <select class="form-select" id="category-select">
+                <option value="">-- Sélectionner une catégorie --</option>
+                <option value="chairs">Chaises</option>
+                <option value="tables">Tables</option>
+                <option value="sofas">Salons & Bureaux</option>
+                <option value="electronics">Électroniques & Accessoires</option>
+            </select>
+        </div>
+        
+        <div class="form-group mb-3">
+            <label for="product-select" class="form-label">Produit</label>
+            <select class="form-select" id="product-select" disabled>
+                <option value="">-- Sélectionner d'abord une catégorie --</option>
+            </select>
+        </div>
+        
+        <div class="selected-products mt-4" id="selected-products-list">
+            <!-- Selected products will appear here -->
+        </div>
+
+        <script>
+            // Product catalog data organized by categories with Euro prices
+            const productCatalog = {
+                chairs: [
+                    { name: "Chaise EVEREST B", price: 25.00, details: "" },
+                    { name: "Chaise SCANDINAVE B", price: 45.00, details: "" },
+                    { name: "Chaise RÉUNION N", price: 25.00, details: "" },
+                    { name: "Chaise OR rouge et beige", price: 20.00, details: "" },
+                    { name: "Chaise PATCHWORK gris", price: 80.00, details: "" },
+                    { name: "Chaise ALINEA B", price: 65.00, details: "" },
+                    { name: "Chaise haute SIMILI, noire", price: 55.00, details: "" },
+                    { name: "Chaise haute CONFORT, n b r", price: 70.00, details: "" }
+                ],
+                tables: [
+                    { name: "Table RONDE blanche", price: 50.00, details: "80 cm de diamètre. 70 cm de hauteur." },
+                    { name: "Table ATELIER", price: 105.00, details: "Dimension 140 cm x 65 cm. 70 cm de hauteur grise" },
+                    { name: "Table SCANDINAVE RONDE en verre", price: 70.00, details: "Dimension 80 cm de diamètre 75 cm de hauteur blanche" },
+                    { name: "Table SCANDINAVE CARÉE en verre", price: 85.00, details: "Dimension 85 cm x 85 cm 75 cm de hauteur" },
+                    { name: "Table haute SCANDINAVE", price: 80.00, details: "Dimension 60 cm de diamètre 100 cm de hauteur" },
+                    { name: "Table haute CLASSIC noir", price: 85.00, details: "60cm diamètre" },
+                    { name: "Table basse TRIPODE blanche", price: 85.00, details: "Dimension 60 cm de diamètre 60 cm de hauteur" },
+                    { name: "Grande table SIMPLY", price: 140.00, details: "Dimension 120 cm x 70 cm blanche" },
+                    { name: "Grande table ROUNDED blanche", price: 140.00, details: "Dimension 120 cm x 90 cm" },
+                    { name: "Table basse STANDARD noire et blanc", price: 55.00, details: "" }
+                ],
+                sofas: [
+                    { name: "Salon Standard noire 1 place", price: 70.00, details: "" },
+                    { name: "Salon Standard noire 4 places + Table basse", price: 250.00, details: "" },
+                    { name: "Salon Haute Qualité 4 places + Table basse rouge", price: 600.00, details: "" },
+                    { name: "Salon VIP 4 places + Table basse bleu gris et beige", price: 500.00, details: "" },
+                    { name: "Desk STANDARD", price: 105.00, details: "Dimension 80 x 35 x 90 cm blanche" },
+                    { name: "Desk STANDARD Avec Habillage", price: 140.00, details: "80 x 35 x 90 cm blanche" }
+                ],
+                electronics: [
+                    { name: "REFRIGERATEUR 90L", price: 105.00, details: "" },
+                    { name: "Machine à café - capsules", price: 160.00, details: "" },
+                    { name: "ECRAN TV LED 32\"", price: 50.00, details: "" },
+                    { name: "ECRAN TV LED 43\"", price: 60.00, details: "" },
+                    { name: "ECRAN TV LED 50\"", price: 90.00, details: "" },
+                    { name: "ECRAN TV LED 55\"", price: 120.00, details: "" },
+                    { name: "ECRAN TV LED 65\"", price: 250.00, details: "" },
+                    { name: "Support TV sur pieds", price: 60.00, details: "" },
+                    { name: "VITRINE Réf. MB26-CO", price: 170.00, details: "" },
+                    { name: "VITRINE Réf. MB26-UN", price: 170.00, details: "" },
+                    { name: "VITRINE Réf. MB26-BI", price: 210.00, details: "" },
+                    { name: "PORTE DOCUMENTS A4 Réf. MB27-P", price: 80.00, details: "" },
+                    { name: "PORTE DOCUMENTS A4 Réf. MB27-PM", price: 65.00, details: "" },
+                    { name: "PORTE DOCUMENTS A4 Réf. MB27-M", price: 160.00, details: "" },
+                    { name: "PLANTES ARTIFICIELLES", price: 55.00, details: "" },
+                    { name: "MOQUETTE", price: 20.00, details: "" },
+                    { name: "Porte en ALUMINIUM pour réserve", price: 160.00, details: "" },
+                    { name: "GUIDE LINE", price: 50.00, details: "" },
+                    { name: "STRUCTURE STRUSS", price: 25.00, details: "" },
+                    { name: "PUPITRE", price: 160.00, details: "" },
+                    { name: "ÉTAGÈRE métallique", price: 60.00, details: "" },
+                    { name: "CORBEILLE en plastique", price: 10.00, details: "" },
+                    { name: "CORBEILLE métalique", price: 20.00, details: "" },
+                    { name: "Réglette avec 3 spots électriques", price: 35.00, details: "" },
+                    { name: "MULTIPRISES", price: 10.00, details: "" }
+                ]
+            };
+
+            // Get the DOM elements
+            const categorySelect = document.getElementById('category-select');
+            const productSelect = document.getElementById('product-select');
+            const selectedProductsList = document.getElementById('selected-products-list');
+
+            // Add event listener for category selection
+            categorySelect.addEventListener('change', function() {
+                const selectedCategory = this.value;
+                
+                // Clear product dropdown
+                productSelect.innerHTML = '';
+                
+                if (selectedCategory) {
+                    // Enable product dropdown
+                    productSelect.disabled = false;
+                    
+                    // Add default option
+                    const defaultOption = document.createElement('option');
+                    defaultOption.value = '';
+                    defaultOption.textContent = '-- Sélectionner un produit --';
+                    productSelect.appendChild(defaultOption);
+                    
+                    // Add product options for the selected category
+                    productCatalog[selectedCategory].forEach(product => {
+                        const option = document.createElement('option');
+                        option.value = JSON.stringify(product);
+                        option.textContent = `${product.name} - ${product.price.toLocaleString()} €`;
+                        productSelect.appendChild(option);
+                    });
+                } else {
+                    // Disable product dropdown if no category is selected
+                    productSelect.disabled = true;
+                    const defaultOption = document.createElement('option');
+                    defaultOption.value = '';
+                    defaultOption.textContent = '-- Sélectionner d\'abord une catégorie --';
+                    productSelect.appendChild(defaultOption);
+                }
+            });
+
+            // Add event listener for product selection
+            productSelect.addEventListener('change', function() {
+                const selectedProductValue = this.value;
+                
+                if (selectedProductValue) {
+                    const product = JSON.parse(selectedProductValue);
+                    addProductToSelection(product);
+                    
+                    // Reset product selection for another choice
+                    this.value = '';
+                }
+            });
+
+            // Function to add a product to the selection list
+            function addProductToSelection(product) {
+                // Create a unique ID for this product instance
+                const productId = 'product_' + Date.now();
+                
+                // Create the checkbox div similar to your original format
+                const checkboxDiv = document.createElement('div');
+                checkboxDiv.className = 'form-check';
+                checkboxDiv.innerHTML = `
+                    <input class="form-check-input" type="checkbox" id="${productId}" name="product_selected[${productId}]" value="1" checked>
+                    <label class="form-check-label" for="${productId}">
+                        ${product.name}
+                        <span class="price-tag">${product.price.toLocaleString()} €</span>
+                    </label>
+                    ${product.details ? `<small class="form-text text-muted d-block">${product.details}</small>` : ''}
+                `;
+                
+                // Create a hidden input to store product info
+                const hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = `selected_products[${productId}]`;
+                hiddenInput.value = JSON.stringify(product);
+                checkboxDiv.appendChild(hiddenInput);
+                
+                // Add the checkbox to the selected products list
+                selectedProductsList.appendChild(checkboxDiv);
+                
+                // Add event listener to remove the product when unchecked
+                const checkbox = checkboxDiv.querySelector('input[type="checkbox"]');
+                checkbox.addEventListener('change', function() {
+                    if (!this.checked) {
+                        checkboxDiv.remove();
+                    }
+                });
+            }
+        </script>
+    </div>
 
     <!-- Signalétique du Stand -->
     <h4 data-aos="fade-right" class="mt-5">Signalétique du Stand</h4>
@@ -390,7 +570,7 @@
         </div>
 
         <div class="col-md-6 floating-label" id="custom_badges_container" style="display: none;">
-            <input type="number" class="form-control" id="badges_count" name="badges_count" min="1" required>
+            <input type="number" class="form-control" id="badges_count" name="badges_count" min="1">
             <label for="badges_count">Précisez le nombre de badges</label>
         </div>
 
@@ -407,17 +587,23 @@
                     } else {
                         customBadgesContainer.style.display = 'none';
                         badgesCountInput.required = false;
-                        badgesCountInput.value = '';
+                        // Set the badges_count to the selected value
+                        badgesCountInput.value = this.value;
                     }
                 });
+                
+                // Initialize badges_count with the value from badges_select
+                if (badgesSelect.value && badgesSelect.value !== 'autre') {
+                    badgesCountInput.value = badgesSelect.value;
+                }
             });
         </script>
         <div class="col-md-6 floating-label">
             <select class="form-select" id="macarons" name="macarons" required>
-                <option value="1">2 badge = 1 macaron</option>
+                <option value="1">2 badges = 1 macaron</option>
                 <option value="2">4 badges = 2 macarons</option>
                 <option value="3">6 badges = 3 macarons</option>
-                <option value="3">10 badges = 3 macarons</option>
+                <option value="4">10 badges = 3 macarons</option>
             </select>
             <label for="macarons">Macarons</label>
         </div>
