@@ -83,12 +83,19 @@ return [
      */
     'EmailTransport' => [
         'default' => [
-            'host' => 'localhost',
-            'port' => 25,
-            'username' => null,
-            'password' => null,
-            'client' => null,
-            'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
+            'className' => 'Smtp',
+            'host' => 'mail.catalyst-dz.com',
+            'port' => 587,
+            'username' => 'test@catalyst-dz.com',
+            'password' => 'Test@1234',
+            'tls' => true,
         ],
     ],
+    'Email' => [
+        'default' => [
+            'transport' => 'default',
+            'from' => 'test@catalyst-dz.com',
+        ],
+    ],
+
 ];
